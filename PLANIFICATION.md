@@ -73,4 +73,24 @@ Mon objectif de carrière est de faire une réelle différence dans le milieu pr
 <b>Lien vers la documentation de votre projet (photos, vidéos, extraits sonores, ...)</b>: https://github.com/Cachton/pablo_felippe_mateo_projet-final_582-401 
 
 ## Processus de création
+Pour commencer notre projet, nous avons passé beaucoup de temps à faire du brainstorming et à explorer plusieurs idées différentes avant d'arriver au concept final. Nous voulions créer quelque chose qui puisse être à la fois inquiétant et original. Nous nouss sommes notamment inspirés de pluisieurs ouevres "d'analogue horror" que l'on retrouve en ligne, ainsi que de l'allégorie de la caverne de Platon. Ces inspirations nous ont aidés à développer l'idée de jouer avec la perception, l'inconnu et ce qui peut se cacher derrière ce que l'on voit.
+
+<p align="center">
+    <img src="/media/equipement_tournage.jpg" width=500px>
+</p>
+
+Un de nos principaux défis était de réussir à intégrer du stop motion dans notre projet tout en incluant également une séquence filmée de manière normale. Nous voulions que les deux techniques soient cohérentes ensemble et qu'elles donnent l'impression de faire partie du même univers, plûtot que d'avoir deux styles complèrement séparés. Nous avons donc réfléchi à la façon dont nous pouvions passer d'une technique à l'autre et utiliser ces différences pour renforcer l'ambiance du projet.
+
+
+Nous avons également passé beaucoup de temps à chercher et à réfléchir au décor. Comme nous devions travailler avec les ressources que nous avions à notre disposition, nous avons essayé de trouver la combinaison d’objets et d’espaces qui pourrait créer l’atmosphère la plus glauque et inquiétante possible. Le choix du décor était important pour nous, puisqu’il devait contribuer directement à l’ambiance de l’histoire.
+
+<p align="center">
+    <img src="/media/decors_01.jpg" width=500px>
+</p>
+
+Enfin, nous avons beaucoup réfléchi aux scènes et aux plans que nous voulions filmer. Nous avons essayé d’imaginer à l’avance la composition de chaque plan, la place des objets dans le décor et la manière dont la caméra allait montrer l’action. Cette étape nous a permis de mieux organiser le tournage et de nous assurer que le stop motion et les scènes filmées normalement resteraient cohérents. Au final, le projet est le résultat de plusieurs essais, discussions et changements d’idées qui nous ont progressivement permis d’arriver au concept final.
+
+<p align="center">
+    <img src="/media/tournage_01.jpg" width=500px>
+</p>
 ##
