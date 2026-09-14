@@ -54,9 +54,14 @@ Mon objectif de carrière est de faire une réelle différence dans le milieu pr
 <b>Logiciels ou techniques utilisées:</b> Maya, TouchDesigner, Davinci Resolve, Max. <br>   <b>Catégorie du projet:</b> Expérience Intéractive <br>
 <b>Description courte du projet (Résumé en 1 phrase):</b> On <br>
 <b>Description du projet (Qu'est-ce que le prof vous a demandé de réaliser?) (2 phrases):</b> Nous devions réaliser une expérience interactive combinant l'audio, avec des sons que nous avions nous-mêmes composés, et l'animation d'une scène en 3D. Le projet devait également intégrer TouchDesigner afin de modifier le visuel en temps réel en fonction de l'expérience <br>
-<b>Description de votre projet (Qu'est-ce que vous avez fait?) (2 phrases):</b> J’ai réalisé un projet sous dorme d’une histoire linéaire, inspirée d’un média que j’apprécie particulièrement. J’ai également intégré des éléments interactif (son, changement dans la vidéo et changement de scène) permettant au spectateur d’interagir avec l’œuvre au cours de son déroulement. 
+<b>Description de votre projet (Qu'est-ce que vous avez fait?) (2 phrases):</b> J’ai réalisé un projet sous dorme d’une histoire linéaire, inspirée du jeu "Silent hill 2" pour l'ambiance sombre et inquiétante. J’ai également intégré des éléments interactif (son, changement dans la vidéo et changement de scène) permettant au spectateur d’interagir avec l’œuvre au cours de son déroulement. 
 
 ## Projet 3
+
+<p align="center">
+    <img src="/media/touche_de_la_mort_01.JPG" width=500px>
+</p>
+
 <b>Nom de votre projet:</b> “Le touché de la mort”<br> 
 <b>Mention académique ou personnel:</b> Académique<br>
 <b>Réalisé dans le cadre du cours:</b> Vidéo 02<br>
@@ -66,7 +71,7 @@ Mon objectif de carrière est de faire une réelle différence dans le milieu pr
 <b>Logiciels ou techniques utilisées:</b> Davinchi Resolve<br>   <b>Catégorie du projet:</b> Vidéo<br>
 <b>Description courte du projet (Résumé en 1 phrase):</b> Nous devions réaliser un projet vidéo en macro qui montrait des parties du corps.<br>
 <b>Description du projet (Qu'est-ce que le prof vous a demandé de réaliser?) (2 phrases):</b> Créer une expérimentale de 1 minute 30 sur le corps humain, ou l’accumulation d’images et de sons exprime une émotion, une matière ou raconte une histoire sans paroles. L’objectif est d’utiliser le corps comme langage visuel et sonore, à travers une approche sensorielle, poétique ou abstraite. <br>
-<b>Description de votre projet (Qu'est-ce que vous avez fait?) (2 phrases):
+<b>Description de votre projet (Qu'est-ce que vous avez fait?) (2 phrases): Notre projet montre une personne qui sombre progressivement dans la violence jusqu’à commettre un meurtre. Nous avons souvent filmé son visage afin de montrer qu’elle perd peu à peu son identité et de créer une atmosphère sombre, dérangeante et glauque
 
 
 ## Projet 4
@@ -119,3 +124,7 @@ One-pager avec carousel
 ## Hébergement
  
 GitHub Pages
+
+## Inspiration et design
+
+https://www.figma.com/design/GE7NpAoOo3rGNe7ty4Fe6s/design_portfolio_pereira_pablo?node-id=36-44&t=j28qrd8w9CCanWyI-0
