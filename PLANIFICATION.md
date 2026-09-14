@@ -14,7 +14,7 @@
 - Créer des univers immersifs et interactifs
 ## Logiciels
 - Photoshop
-- Davinchi Resolve
+- Davinci Resolve
 - Maya
 - Unity
 ## Langage de programmation
@@ -106,7 +106,7 @@ Nous avons également passé beaucoup de temps à chercher et à réfléchir au 
 Enfin, nous avons beaucoup réfléchi aux scènes et aux plans que nous voulions filmer. Nous avons essayé d’imaginer à l’avance la composition de chaque plan, la place des objets dans le décor et la manière dont la caméra allait montrer l’action. Cette étape nous a permis de mieux organiser le tournage et de nous assurer que le stop motion et les scènes filmées normalement resteraient cohérents. Au final, le projet est le résultat de plusieurs essais, discussions et changements d’idées qui nous ont progressivement permis d’arriver au concept final.
 
 <p align="center">
-    <img src="/media/tournage_01.jpg" width=500px>
+    <img src="/media/antrum_installation_live_01.jpg" width=500px>
 </p>
 
 ## Gestion des données
@@ -115,15 +115,21 @@ Je vais utilisé un Fichier JSON local
  
 ## Animations
  
-J'utiliserai du css pur
+J'utiliserai du css pur <br>
+
+J'aimerais faire en sorte que le background "bouge" dépendant de la souris. J'aimerais que l'animation soit assez simple. 
  
 ## Structure de navigation
  
-One-pager avec carousel
+One-pager avec carousel <br>
+
+J'aimerais intégrer une carousel vers le début de la page qui montre mes qualités et compétences.
  
 ## Hébergement
  
-GitHub Pages
+GitHub Pages <br>
+
+Je choisi de le publier sur github car je trouve que c'est plus simple pour moi car je suis plus habitué avec le logiciel.
 
 ## Inspiration et design
 
