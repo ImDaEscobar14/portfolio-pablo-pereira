@@ -93,4 +93,3 @@ Enfin, nous avons beaucoup réfléchi aux scènes et aux plans que nous voulions
 <p align="center">
     <img src="/media/tournage_01.jpg" width=500px>
 </p>
-##
