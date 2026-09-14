@@ -1,5 +1,11 @@
 # Panification Portfolio
  
+## Fiche d'identité visuelle : 
+
+<p align="center">
+    <img src="/media/portfolio_v1.png" width=500px>
+</p>
+
 ## Compétences
 - Réaliser et tourner des vidéos
 - Animer des créations 2D et 3D
