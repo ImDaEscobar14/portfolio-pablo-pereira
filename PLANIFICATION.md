@@ -3,7 +3,7 @@
 ## Fiche d'identité visuelle : 
 
 <p align="center">
-    <img src="/media/moodboard.png" width=500px>
+    <img src="/media/moodboard.jpg" width=500px>
 </p>
 
 ## Compétences
@@ -71,7 +71,7 @@ Mon objectif de carrière est de faire une réelle différence dans le milieu pr
 <b>Logiciels ou techniques utilisées:</b> Davinchi Resolve<br>   <b>Catégorie du projet:</b> Vidéo<br>
 <b>Description courte du projet (Résumé en 1 phrase):</b> Nous devions réaliser un projet vidéo en macro qui montrait des parties du corps.<br>
 <b>Description du projet (Qu'est-ce que le prof vous a demandé de réaliser?) (2 phrases):</b> Créer une expérimentale de 1 minute 30 sur le corps humain, ou l’accumulation d’images et de sons exprime une émotion, une matière ou raconte une histoire sans paroles. L’objectif est d’utiliser le corps comme langage visuel et sonore, à travers une approche sensorielle, poétique ou abstraite. <br>
-<b>Description de votre projet (Qu'est-ce que vous avez fait?) (2 phrases): Notre projet montre une personne qui sombre progressivement dans la violence jusqu’à commettre un meurtre. Nous avons souvent filmé son visage afin de montrer qu’elle perd peu à peu son identité et de créer une atmosphère sombre, dérangeante et glauque
+<b>Description de votre projet (Qu'est-ce que vous avez fait?) (2 phrases):</br> Notre projet montre une personne qui sombre progressivement dans la violence jusqu’à commettre un meurtre. Nous avons souvent filmé son visage afin de montrer qu’elle perd peu à peu son identité et de créer une atmosphère sombre, dérangeante et glauque.
 
 
 ## Projet 4
@@ -84,7 +84,7 @@ Mon objectif de carrière est de faire une réelle différence dans le milieu pr
 <b>Logiciels ou techniques utilisées:</b> Unity, maya, VS code, github<br>   <b>Catégorie du projet:</b> Jeux en réalité virtuelle (VR)<br>
 <b>Description courte du projet (Résumé en 1 phrase):</b> Créer une expérience sur unity pour VR<br>
 <b>Description du projet (Qu'est-ce que le prof vous a demandé de réaliser?) (2 phrases):</b>  Réaliser un jeu en réalité virtuelle permettant au joueur de démarrer le jeu, d’interagir avec différents objets et de passer d’une scène a une autre. Nous devions également créer une ambiance sonore et visuelle cohérente avec l’univers du jeu.<br>
-<b>Description de votre projet (Qu'est-ce que vous avez fait?) (2 phrases): Nous avons créé une expérience d’horreur inspirée de P.T., dans laquelle le joueur navigue à travers un hôtel en interagissant avec son environnement. Des objectifs et des éléments interactifs permettent au joueur de progresser et d’avancer dans l’histoire du jeu.<br>
+<b>Description de votre projet (Qu'est-ce que vous avez fait?) (2 phrases): Nous avons créé une expérience d’horreur inspirée du jeu P.T., pour son ambiance de répition et angoissante qui développe plus que l'on progresse. Des objectifs et des éléments interactifs permettent au joueur de progresser et d’avancer dans l’histoire du jeu.<br>
 <b>Lien vers la documentation de votre projet (photos, vidéos, extraits sonores, ...)</b>: https://github.com/Cachton/pablo_felippe_mateo_projet-final_582-401 
 
 ## Processus de création
