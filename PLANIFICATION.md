@@ -23,6 +23,11 @@
 ## Objectif de carrière
 Mon objectif de carrière est de faire une réelle différence dans le milieu professionnel dans lequel je vais évoluer. J’aimerais pouvoir mettre à profit ma créativité, mes idées et ma vision afin de contribuer à la réalisation de projets qui me passionnent et qui ont une réelle valeur. Je souhaite également continuer à développer mes compétences dans le domaine du multimédia, découvrir de nouvelles façons de créer et relever des défis qui me permettront de grandir professionnellement. À long terme, j’aimerais laisser ma marque à travers les projets auxquels je contribuerai et avoir le sentiment d’avoir apporté quelque chose de significatif à mon milieu
 ## Projet 1
+
+<p align="center">
+    <img src="/media/antrum_projet_video_01.jpg" width=500px>
+</p>
+
 <b>Nom de votre projet:</b> “Antrum” <br>
 <b>Mention académique ou personnel:</b> Académique <br>
 <b>Réalisé dans le cadre du cours:</b> Vidéo <br>
