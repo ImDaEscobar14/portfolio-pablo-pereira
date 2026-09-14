@@ -1,4 +1,4 @@
-# Panification Portfolio
+# Planification Portfolio
  
 ## Fiche d'identité visuelle : 
 
@@ -93,4 +93,19 @@ Enfin, nous avons beaucoup réfléchi aux scènes et aux plans que nous voulions
 <p align="center">
     <img src="/media/tournage_01.jpg" width=500px>
 </p>
-##
+
+## Gestion des données
+ 
+Je vais utilisé un Fichier JSON local
+ 
+## Animations
+ 
+J'utiliserai du css pur
+ 
+## Structure de navigation
+ 
+One-pager avec carousel
+ 
+## Hébergement
+ 
+GitHub Pages
