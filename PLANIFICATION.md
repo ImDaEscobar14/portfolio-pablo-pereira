@@ -3,7 +3,7 @@
 ## Fiche d'identité visuelle : 
 
 <p align="center">
-    <img src="/media/portfolio_v1.png" width=500px>
+    <img src="/media/moodboard.png" width=500px>
 </p>
 
 ## Compétences
@@ -29,19 +29,24 @@ Mon objectif de carrière est de faire une réelle différence dans le milieu pr
 <b>Individuel ou en équipe:</b> Équipe <br>
 <b>Nom de vos coéquipiers:</b> Felippe Sousa et Mateo Rodriguez Fontaine <br>
 <b>Votre ou vos rôle(s) dans le projet:</b> Scénariste, cadreur, monteur, directeur artistique et ensemblier.<br>
-<b>Logiciels ou techniques utilisées:</b> Davinchi Resolve, Dragonframe. <br> <b>Catégorie du projet:</b> Projet vidéo<br>
+<b>Logiciels ou techniques utilisées:</b> Davinci Resolve, Dragonframe. <br> <b>Catégorie du projet:</b> Projet vidéo<br>
 <b>Description courte du projet (Résumé en 1 phrase):</b> Un projet en stop motion racontant une histoire en boucle, dans une ambiance glauque et dérengeant. <br>
 <b>Description du projet (Qu'est-ce que le prof vous a demandé de réaliser?) (2 phrases):</b> Le projet consistait à créer une œuvre audiovisuelle destinée à être projetée sur trois écrans, avec une télévision placée au centre. Nous devions également intégrer les lumières de la salle afin qu’elles fassent partie de l’expérience visuelle du projet.  
 <b>Description de votre projet (Qu'est-ce que vous avez fait?) (2 phrases):</b> Nous avons créé une vidéo glauque inspirée de l’allégorie de la caverne, qui se répète en boucle jusqu’à un moment ou le stop motion se transforme en vidéo normale. La vidéo prend par la suite une esthétique de found footage, comme si la scène avait été filmée de manière réelle et imprévue. 
 
 ## Projet 2
+
+<p align="center">
+    <img src="/media/purgatoire_live_01.jpg" width=500px>
+</p>
+
 <b>Nom de votre projet:</b> “Purgatoire” <br> 
 <b>Mention académique ou personnel:</b> Académique <br>
 <b>Réalisé dans le cadre du cours:</b> Animation 3D, Audio 2 et Traitement audiovisuel <br>
 <b>Individuel ou en équipe:</b> Individuelle <br>
 <b>Nom de vos coéquipiers:</b> -	x <br>
 <b>Votre ou vos rôle(s) dans le projet:</b> Directeur artistique, monteur, animateur, modélisateur et directeur de l’audio. <br> 
-<b>Logiciels ou techniques utilisées:</b> Maya, TouchDesigner, Davinchi Resolve, Max. <br>   <b>Catégorie du projet:</b> Expérience Intéractive <br>
+<b>Logiciels ou techniques utilisées:</b> Maya, TouchDesigner, Davinci Resolve, Max. <br>   <b>Catégorie du projet:</b> Expérience Intéractive <br>
 <b>Description courte du projet (Résumé en 1 phrase):</b> On <br>
 <b>Description du projet (Qu'est-ce que le prof vous a demandé de réaliser?) (2 phrases):</b> Nous devions réaliser une expérience interactive combinant l'audio, avec des sons que nous avions nous-mêmes composés, et l'animation d'une scène en 3D. Le projet devait également intégrer TouchDesigner afin de modifier le visuel en temps réel en fonction de l'expérience <br>
 <b>Description de votre projet (Qu'est-ce que vous avez fait?) (2 phrases):</b> J’ai réalisé un projet sous dorme d’une histoire linéaire, inspirée d’un média que j’apprécie particulièrement. J’ai également intégré des éléments interactif (son, changement dans la vidéo et changement de scène) permettant au spectateur d’interagir avec l’œuvre au cours de son déroulement. 
@@ -66,7 +71,7 @@ Mon objectif de carrière est de faire une réelle différence dans le milieu pr
 <b>Individuel ou en équipe:</b> Équipe<br>
 <b>Nom de vos coéquipiers:</b>  Felippe Sousa et Mateo Rodriguez Fontaine<br>
 <b>Votre ou vos rôle(s) dans le projet:</b> Designer de niveau, Scénariste, programmeur,<br> 
-<b>Logiciels ou techniques utilisées:</b> Unity, maya, VS code, github<br>   <b>Catégorie du projet:</b> Jeux VR<br>
+<b>Logiciels ou techniques utilisées:</b> Unity, maya, VS code, github<br>   <b>Catégorie du projet:</b> Jeux en réalité virtuelle (VR)<br>
 <b>Description courte du projet (Résumé en 1 phrase):</b> Créer une expérience sur unity pour VR<br>
 <b>Description du projet (Qu'est-ce que le prof vous a demandé de réaliser?) (2 phrases):</b>  Réaliser un jeu en réalité virtuelle permettant au joueur de démarrer le jeu, d’interagir avec différents objets et de passer d’une scène a une autre. Nous devions également créer une ambiance sonore et visuelle cohérente avec l’univers du jeu.<br>
 <b>Description de votre projet (Qu'est-ce que vous avez fait?) (2 phrases): Nous avons créé une expérience d’horreur inspirée de P.T., dans laquelle le joueur navigue à travers un hôtel en interagissant avec son environnement. Des objectifs et des éléments interactifs permettent au joueur de progresser et d’avancer dans l’histoire du jeu.<br>
