@@ -34,8 +34,11 @@
 
 ## Utilisation de l'IA
 
-09-02-26 <br>
+### 09-02-26
+
 jaimerais que tu me fasse un exemple dun design dun portfolio web en s'inspirant de mon moodboard avec les information sur mon persona j'aimerais que tu me fasse un moodboard qui a une ambiance electro ( grainy ) prend exemple des images que j'ai mis dans mon moodboard que j'ai fait.
 
 Mon résulat était moyen, les couleurs et l'ambiance étaient correct mais j'aimais pas la simplicité du design. Je trouve que ca ne respectait pas réelement mon moodboard.
+
+---
 
