@@ -19,6 +19,16 @@
 ---
 
 ## Bloc 1 (Design)
+
+
+- J'ai développer quelques exemple de design de portfolio avec Stich et j'ai pris inspiration de ce que j'ai créer pour faire une version que j'aime de mon portfolio. 
+- Je n'avais pas accès à figma donc j'ai du utiliser et apprendre à utiliser Stich pour la conception de mes designs. 
+- J'ai appris comment exporter ce que j'ai créer sur Stitch et comment l'importer sur Figma.
+- Ma prochaine étape est de commencer le code HTML.
+- J'ai utilisé l'ai avec stich pour me faire quelques exemples de designs pour mon portfolio. 
+
+
+
 ## Bloc 2 (Intégration et QA)
 ## Bloc 3 (Final)
 
