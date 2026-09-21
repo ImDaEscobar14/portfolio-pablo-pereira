@@ -75,6 +75,11 @@ Mon objectif de carrière est de faire une réelle différence dans le milieu pr
 
 
 ## Projet 4
+
+<p align="center">
+    <img src="../assets/images/jeu_vr_main_menu.jpg" width=500px>
+</p>
+
 <b>Nom de votre projet:</b> “5686 11 ème Avenue”<br> 
 <b>Mention académique ou personnel:</b> Académique<br>
 <b>Réalisé dans le cadre du cours:</b> Réalité mixte<br>
@@ -108,8 +113,6 @@ Enfin, nous avons beaucoup réfléchi aux scènes et aux plans que nous voulions
 <p align="center">
     <img src="/assets/images/antrum_installation_live_01.jpg" width=500px>
 </p>
-<<<<<<< HEAD:PLANIFICATION.md
-=======
 
 ## Gestion des données
  
@@ -136,4 +139,3 @@ Je choisi de le publier sur github car je trouve que c'est plus simple pour moi 
 ## Inspiration et design
 
 https://www.figma.com/design/GE7NpAoOo3rGNe7ty4Fe6s/design_portfolio_pereira_pablo?node-id=36-44&t=j28qrd8w9CCanWyI-0
->>>>>>> 7099a5059b6597a0ce853e7c759926ee640b442c:documentation/PLANIFICATION.md
