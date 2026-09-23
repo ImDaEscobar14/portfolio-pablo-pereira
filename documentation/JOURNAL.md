@@ -42,3 +42,8 @@ Mon résulat était moyen, les couleurs et l'ambiance étaient correct mais j'ai
 
 ---
 
+### 09-23-26
+
+regarde l'image : carte_projet que j'ai dans mon dossier "export_composant" , et jamerais que tu me fasse ca en carte dans index.html et base.css 
+
+Mon résultat était satifaisant, j'ai par la suite ajouté mes autres projets et ajouté les bordures que je voulais comme dans mon exemple dans mon figma.
