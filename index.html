@@ -23,75 +23,155 @@
         </nav>
     </header>
 
-    <main class="page-content projects-grid">
-        <article class="project-card project-card--red" aria-labelledby="project-title-1">
-            <header class="project-card__header">
-                <h2 id="project-title-1" class="project-card__title">PURGATOIRE</h2>
-                <p class="project-card__meta" aria-label="Technologies du projet">
-                    <span>Animation</span> - <span>Modélisation</span> - <span>Touchdesigner</span>
+    <main class="page-content">
+        <section class="competences-carousel" aria-labelledby="competences-title">
+            <h2 id="competences-title" class="competences-carousel__title">COMPÉTENCES</h2>
+
+            <div class="competences-carousel__viewport" aria-roledescription="carousel" aria-label="Carrousel des compétences">
+                <button class="competences-carousel__arrow competences-carousel__arrow--prev" type="button" aria-label="Faire défiler les compétences vers la droite">
+                    <span aria-hidden="true">&#10094;</span>
+                </button>
+
+                <div class="competences-carousel__stage">
+                    <div class="competences-carousel__track">
+                        <article class="competence-card">
+                            <div class="competence-card__header">
+                                <span class="competence-card__index">01</span>
+                                <h3 class="competence-card__label">CRÉATIVITÉ</h3>
+                            </div>
+                            <p class="competence-card__text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                        </article>
+
+                        <article class="competence-card">
+                            <div class="competence-card__header">
+                                <span class="competence-card__index">02</span>
+                                <h3 class="competence-card__label">CRÉATIVITÉ</h3>
+                            </div>
+                            <p class="competence-card__text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                        </article>
+
+                        <article class="competence-card">
+                            <div class="competence-card__header">
+                                <span class="competence-card__index">03</span>
+                                <h3 class="competence-card__label">CRÉATIVITÉ</h3>
+                            </div>
+                            <p class="competence-card__text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                        </article>
+
+                        <article class="competence-card">
+                            <div class="competence-card__header">
+                                <span class="competence-card__index">04</span>
+                                <h3 class="competence-card__label">CRÉATIVITÉ</h3>
+                            </div>
+                            <p class="competence-card__text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                        </article>
+
+                        <article class="competence-card">
+                            <div class="competence-card__header">
+                                <span class="competence-card__index">05</span>
+                                <h3 class="competence-card__label">CRÉATIVITÉ</h3>
+                            </div>
+                            <p class="competence-card__text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+
+                <button class="competences-carousel__arrow competences-carousel__arrow--next" type="button" aria-label="Faire défiler les compétences vers la gauche">
+                    <span aria-hidden="true">&#10095;</span>
+                </button>
+            </div>
+
+            <div class="competences-carousel__dots" aria-hidden="true">
+                <span class="competences-carousel__dot competences-carousel__dot--active"></span>
+                <span class="competences-carousel__dot"></span>
+                <span class="competences-carousel__dot"></span>
+                <span class="competences-carousel__dot"></span>
+                <span class="competences-carousel__dot"></span>
+            </div>
+        </section>
+
+        <section class="projects-grid" aria-labelledby="projects-title">
+            <h2 id="projects-title" class="projects-grid__title">PROJETS</h2>
+            <article class="project-card project-card--red" aria-labelledby="project-title-1">
+                <header class="project-card__header">
+                    <h2 id="project-title-1" class="project-card__title">PURGATOIRE</h2>
+                    <p class="project-card__meta" aria-label="Technologies du projet">
+                        <span>Animation</span> - <span>Modélisation</span> - <span>Touchdesigner</span>
+                    </p>
+                </header>
+
+                <figure class="project-card__media">
+                    <img src="./assets/images/purgatoire_live_01.jpg" alt="Projet Purgatoire" />
+                </figure>
+
+                <p class="project-card__description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
-            </header>
+            </article>
 
-            <figure class="project-card__media">
-                <img src="./assets/images/purgatoire_live_01.jpg" alt="Projet Purgatoire" />
-            </figure>
+            <article class="project-card project-card--green" aria-labelledby="project-title-2">
+                <header class="project-card__header">
+                    <h2 id="project-title-2" class="project-card__title">ANTRUM</h2>
+                    <p class="project-card__meta" aria-label="Technologies du projet">
+                        <span>Video</span> - <span>Modélisation</span> - <span>Touchdesigner</span>
+                    </p>
+                </header>
 
-            <p class="project-card__description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-        </article>
+                <figure class="project-card__media">
+                    <img src="./assets/images/antrum_projet_video_01.jpg" alt="Projet Antrum" />
+                </figure>
 
-        <article class="project-card project-card--green" aria-labelledby="project-title-2">
-            <header class="project-card__header">
-                <h2 id="project-title-2" class="project-card__title">ANTRUM</h2>
-                <p class="project-card__meta" aria-label="Technologies du projet">
-                    <span>Video</span> - <span>Modélisation</span> - <span>Touchdesigner</span>
+                <p class="project-card__description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
-            </header>
+            </article>
 
-            <figure class="project-card__media">
-                <img src="./assets/images/antrum_projet_video_01.jpg" alt="Projet Antrum" />
-            </figure>
+            <article class="project-card project-card--green" aria-labelledby="project-title-3">
+                <header class="project-card__header">
+                    <h2 id="project-title-3" class="project-card__title">TOUCHÉ DE LA MORT</h2>
+                    <p class="project-card__meta" aria-label="Technologies du projet">
+                        <span>Vidéo</span>
+                    </p>
+                </header>
 
-            <p class="project-card__description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-        </article>
+                <figure class="project-card__media">
+                    <img src="./assets/images/touche_de_la_mort_01.JPG" alt="Projet Touche de la mort" />
+                </figure>
 
-        <article class="project-card project-card--green" aria-labelledby="project-title-3">
-            <header class="project-card__header">
-                <h2 id="project-title-3" class="project-card__title">TOUCHÉ DE LA MORT</h2>
-                <p class="project-card__meta" aria-label="Technologies du projet">
-                    <span>Vidéo</span> 
+                <p class="project-card__description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
-            </header>
+            </article>
 
-            <figure class="project-card__media">
-                <img src="./assets/images/touche_de_la_mort_01.JPG" alt="Projet Touche de la mort" />
-            </figure>
+            <article class="project-card project-card--red" aria-labelledby="project-title-4">
+                <header class="project-card__header">
+                    <h2 id="project-title-4" class="project-card__title">5686 11E AVENUE</h2>
+                    <p class="project-card__meta" aria-label="Technologies du projet">
+                        <span>Animation</span> - <span>Unity</span>
+                    </p>
+                </header>
 
-            <p class="project-card__description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-        </article>
+                <figure class="project-card__media">
+                    <img src="./assets/images/jeu_vr_main_menu.jpg" alt="Projet 5686 11e avenue" />
+                </figure>
 
-        <article class="project-card project-card--red" aria-labelledby="project-title-4">
-            <header class="project-card__header">
-                <h2 id="project-title-4" class="project-card__title">5686 11E AVENUE</h2>
-                <p class="project-card__meta" aria-label="Technologies du projet">
-                    <span>Animation</span> - <span>Unity</span>
+                <p class="project-card__description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
-            </header>
-
-            <figure class="project-card__media">
-                <img src="./assets/images/jeu_vr_main_menu.jpg" alt="Projet 5686 11e avenue" />
-            </figure>
-
-            <p class="project-card__description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-        </article>
+            </article>
+        </section>
     </main>
+    <script src="./js/main.js" defer></script>
 </body>
 
 </html>

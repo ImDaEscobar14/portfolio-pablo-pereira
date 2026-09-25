@@ -36,6 +36,7 @@
 
 ### 09-02-26
 
+PROMPT :
 jaimerais que tu me fasse un exemple dun design dun portfolio web en s'inspirant de mon moodboard avec les information sur mon persona j'aimerais que tu me fasse un moodboard qui a une ambiance electro ( grainy ) prend exemple des images que j'ai mis dans mon moodboard que j'ai fait.
 
 Mon résulat était moyen, les couleurs et l'ambiance étaient correct mais j'aimais pas la simplicité du design. Je trouve que ca ne respectait pas réelement mon moodboard.
@@ -44,6 +45,18 @@ Mon résulat était moyen, les couleurs et l'ambiance étaient correct mais j'ai
 
 ### 09-23-26
 
-regarde l'image : carte_projet que j'ai dans mon dossier "export_composant" , et jamerais que tu me fasse ca en carte dans index.html et base.css 
+PROMPT :
+ regarde l'image : carte_projet que j'ai dans mon dossier "export_composant" , et jamerais que tu me fasse ca en carte dans index.html et base.css
 
 Mon résultat était satifaisant, j'ai par la suite ajouté mes autres projets et ajouté les bordures que je voulais comme dans mon exemple dans mon figma.
+
+---
+
+### 09-25-26
+
+PROMPT :
+j'aimerais que tu me fasse une zone au dessus de mes projets pour ma caroussel. j'aimerais que tu suive mon design de caroussel dans mon export_composant : caroussel_competence
+
+j'aimerais que la caroussel soit anime par du js et quelle defille vers la gauche. Les bande rouge est juste un indicatif quon peut appuyer pour manuellemment faire diffiler la caroussel, on peut la changer pour que ce soit des fleche en soit.
+
+Mon résultat est très satisfaisant, j'ai du corriger quelques problèmes visuelle que j'avais. Les flèches étaient caché par les cartes et peu visible. J'ai aussi fait en sorte que la zone de ma page soit plus grande.
