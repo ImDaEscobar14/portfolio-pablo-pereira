@@ -1,4 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
+	const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+	let backgroundFrame = null;
+
+	if (!prefersReducedMotion) {
+		window.addEventListener("pointermove", (event) => {
+			if (backgroundFrame !== null) {
+				return;
+			}
+
+			backgroundFrame = window.requestAnimationFrame(() => {
+				const horizontalOffset = ((event.clientX / window.innerWidth) - 0.5) * -12;
+				const verticalOffset = ((event.clientY / window.innerHeight) - 0.5) * -8;
+
+				document.body.style.setProperty("--background-x", `${horizontalOffset.toFixed(2)}px`);
+				document.body.style.setProperty("--background-y", `${verticalOffset.toFixed(2)}px`);
+				backgroundFrame = null;
+			});
+		});
+	}
+
 	const carousel = document.querySelector(".competences-carousel");
 
 	if (!carousel) {
