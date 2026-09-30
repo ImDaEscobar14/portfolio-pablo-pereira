@@ -98,6 +98,79 @@ nav a {
     padding: 1.25rem 2rem 3rem;
 }
 
+.intro-portfolio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 32rem;
+    padding: 2rem 0 1.5rem;
+    text-align: center;
+}
+
+.intro-portfolio__title {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: clamp(3.2rem, 7vw, 11rem);
+    line-height: 0.82;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-shadow: 0 0 0 #fff, 0 0 18px rgba(255, 255, 255, 0.12);
+}
+
+.intro-portfolio__line {
+    display: block;
+    color: rgba(255, 255, 255, 0.95);
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.76);
+    text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.48);
+}
+
+.intro-portfolio__skills {
+    margin: 1.5rem 0 2rem;
+    color: var(--text-accent);
+    font-size: clamp(1.2rem, 2.2vw, 3.1rem);
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.intro-portfolio__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.intro-portfolio__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: min(100%, 18rem);
+    padding: 1rem 2rem;
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--text-primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: clamp(1rem, 1.4vw, 1.8rem);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.intro-portfolio__button--primary {
+    background: var(--text-accent);
+    border-color: var(--text-accent);
+    box-shadow: 0 0 0 1px rgba(226, 10, 13, 0.8);
+}
+
+.intro-portfolio__button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
 .competences-carousel {
     width: 100%;
     margin: 0 auto 2.25rem;

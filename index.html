@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/layout.css">
+    <script src="./js/data.js"></script>
 </head>
 <body>
     <header>
@@ -24,6 +25,20 @@
     </header>
 
     <main class="page-content">
+        <section class="intro-portfolio" aria-labelledby="intro-title">
+            <h1 id="intro-title" class="intro-portfolio__title">
+                <span class="intro-portfolio__line intro-portfolio__line--upper">PABLO PEREIRA</span>
+                <span class="intro-portfolio__line intro-portfolio__line--lower">CALDERON</span>
+            </h1>
+
+            <p class="intro-portfolio__skills">VIDÉO, ANIMATION &amp; MODÉLISATION</p>
+
+            <div class="intro-portfolio__actions">
+                <a class="intro-portfolio__button intro-portfolio__button--primary" href="#projets">MES PROJETS</a>
+                <a class="intro-portfolio__button" href="mailto:contact@pablo-pereira.com">ME CONTACTER</a>
+            </div>
+        </section>
+
         <section class="competences-carousel" aria-labelledby="competences-title">
             <h2 id="competences-title" class="competences-carousel__title">COMPÉTENCES</h2>
 
@@ -100,7 +115,7 @@
             </div>
         </section>
 
-        <section class="projects-grid" aria-labelledby="projects-title">
+        <section class="projects-grid" id="projets" aria-labelledby="projects-title">
             <h2 id="projects-title" class="projects-grid__title">PROJETS</h2>
             <article class="project-card project-card--red" aria-labelledby="project-title-1">
                 <header class="project-card__header">
