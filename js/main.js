@@ -19,6 +19,34 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	}
 
+	if (!prefersReducedMotion) {
+		document.addEventListener("pointermove", (event) => {
+			const card = event.target.closest(".project-card");
+
+			if (!card) {
+				return;
+			}
+
+			const cardBounds = card.getBoundingClientRect();
+			const horizontalPosition = (event.clientX - cardBounds.left) / cardBounds.width - 0.5;
+			const verticalPosition = (event.clientY - cardBounds.top) / cardBounds.height - 0.5;
+
+			card.style.setProperty("--card-rotate-x", `${(verticalPosition * -5).toFixed(2)}deg`);
+			card.style.setProperty("--card-rotate-y", `${(horizontalPosition * 5).toFixed(2)}deg`);
+		});
+
+		document.addEventListener("pointerout", (event) => {
+			const card = event.target.closest(".project-card");
+
+			if (!card || card.contains(event.relatedTarget)) {
+				return;
+			}
+
+			card.style.removeProperty("--card-rotate-x");
+			card.style.removeProperty("--card-rotate-y");
+		});
+	}
+
 	const carousel = document.querySelector(".competences-carousel");
 
 	if (!carousel) {

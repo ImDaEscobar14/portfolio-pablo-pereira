@@ -42,6 +42,37 @@ body::before {
     opacity: 0.22;
 }
 
+body::after {
+    position: fixed;
+    inset: -12%;
+    z-index: 0;
+    pointer-events: none;
+    content: "";
+    background: radial-gradient(circle at 50% 42%, rgba(255, 82, 82, 0.16), transparent 38%);
+    mix-blend-mode: screen;
+    opacity: 0.45;
+    animation: background-light-pulse 5.5s ease-in-out infinite;
+}
+
+@keyframes background-light-pulse {
+    0%,
+    100% {
+        opacity: 0.28;
+        transform: scale(0.96);
+    }
+
+    50% {
+        opacity: 0.62;
+        transform: scale(1.04);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body::after {
+        animation: none;
+    }
+}
+
 header {
     position: relative;
     z-index: 1;
@@ -381,11 +412,63 @@ nav a {
     background: var(--bg-panel);
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02);
+    --card-rotate-x: 0deg;
+    --card-rotate-y: 0deg;
     --media-border-color: var(--border-green);
     --media-glow-color: rgba(75, 127, 75, 0.62);
+    transform: perspective(900px) rotateX(var(--card-rotate-x)) rotateY(var(--card-rotate-y));
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    transform-origin: center;
+    will-change: transform;
+}
+
+.project-card__button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: perspective(900px) rotateX(var(--card-rotate-x)) rotateY(var(--card-rotate-y)) scale(1.015);
+    border-color: var(--media-border-color);
+    box-shadow:
+        0 0 24px var(--media-glow-color),
+        0 0 54px color-mix(in srgb, var(--media-glow-color) 35%, transparent);
+}
+
+.project-card__button:focus-visible {
+    outline: 2px solid var(--text-accent);
+    outline-offset: 4px;
+}
+
+.project-card__toggle {
+    color: var(--body-text);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.project-card__details[hidden] {
+    display: none;
+}
+
+.project-card__details {
+    background: rgba(0, 0, 0, 0.18);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.project-card--open {
+    border-color: var(--text-accent);
 }
 
 .project-card__header {
+    position: relative;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -393,6 +476,24 @@ nav a {
     padding: 0.8rem 1.2rem 1rem;
     background: rgba(0, 0, 0, 0.9);
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.project-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.35rem;
+}
+
+.project-card__tag {
+    padding: 0.3rem 0.5rem;
+    color: #7de3b2;
+    font-size: 0.7rem;
+    line-height: 1;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border: 1px solid rgba(125, 227, 178, 0.45);
+    border-radius: 999px;
 }
 
 .project-card__title {
@@ -413,6 +514,9 @@ nav a {
 }
 
 .project-card__media {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
     margin: 0;
     padding: 0;
     background: transparent;
@@ -439,12 +543,15 @@ nav a {
     background: #000;
     border: 2px solid var(--media-border-color);
     box-sizing: border-box;
+    --image-rotate-x: 0deg;
+    --image-rotate-y: 0deg;
+    transform: perspective(700px) rotateX(var(--image-rotate-x)) rotateY(var(--image-rotate-y));
     transition: transform 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
     cursor: pointer;
 }
 
-.project-card__media img:hover {
-    transform: scale(1.02);
+.project-card:hover .project-card__media img {
+    transform: perspective(700px) rotateX(var(--image-rotate-x)) rotateY(var(--image-rotate-y)) scale(1.02);
     filter: brightness(1.06);
     box-shadow:
         0 0 28px var(--media-glow-color),
