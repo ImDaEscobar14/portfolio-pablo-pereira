@@ -12,14 +12,14 @@
     <script src="./js/data.js"></script>
 </head>
 <body>
-    <header>
+    <header id="top">
         <h1>PORTFOLIO - 2026</h1>
         <nav aria-label="Menu principal">
             <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="about.html">Projets</a></li>
-                <li><a href="projects.html">À propos</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#top">Accueil</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#a-propos">À propos</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -36,6 +36,18 @@
             <div class="intro-portfolio__actions">
                 <a class="intro-portfolio__button intro-portfolio__button--primary" href="#projets">MES PROJETS</a>
                 <a class="intro-portfolio__button" href="mailto:contact@pablo-pereira.com">ME CONTACTER</a>
+            </div>
+        </section>
+
+        <section class="demo-video" aria-label="Démo réelle">
+            <div class="demo-video__frame">
+                <iframe
+                    src="https://www.youtube.com/embed/OdD8IUAYi7I?rel=0"
+                    title="Démo réelle Pablo Pereira"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
             </div>
         </section>
 
@@ -115,76 +127,35 @@
             </div>
         </section>
 
-        <!--<section class="projects-grid" id="projets" aria-labelledby="projects-title">
-            <h2 id="projects-title" class="projects-grid__title">PROJETS</h2>
-            <article class="project-card project-card--red" aria-labelledby="project-title-1">
-                <header class="project-card__header">
-                    <h2 id="project-title-1" class="project-card__title">PURGATOIRE</h2>
-                    <p class="project-card__meta" aria-label="Technologies du projet">
-                        <span>Animation</span> - <span>Modélisation</span> - <span>Touchdesigner</span>
-                    </p>
-                </header>
+        <section class="about-section" id="a-propos" aria-labelledby="about-title">
+            <h2 id="about-title" class="about-section__title">À PROPOS</h2>
 
-                <figure class="project-card__media">
-                    <img src="./assets/images/purgatoire_live_01.jpg" alt="Projet Purgatoire" />
-                </figure>
-
-                <p class="project-card__description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <div class="about-section__content about-section__content--single">
+                <p class="about-section__text">
+                    Je suis Pablo, un créatif passionné par la vidéo, l’animation et la modélisation 3D. J’aime donner vie à des idées visuelles fortes, immersives et chargées d’émotion, en associant technique, esthétique et narration.
                 </p>
-            </article>
-
-            <article class="project-card project-card--green" aria-labelledby="project-title-2">
-                <header class="project-card__header">
-                    <h2 id="project-title-2" class="project-card__title">ANTRUM</h2>
-                    <p class="project-card__meta" aria-label="Technologies du projet">
-                        <span>Video</span> - <span>Modélisation</span> - <span>Touchdesigner</span>
-                    </p>
-                </header>
-
-                <figure class="project-card__media">
-                    <img src="./assets/images/antrum_projet_video_01.jpg" alt="Projet Antrum" />
-                </figure>
-
-                <p class="project-card__description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <p class="about-section__text">
+                    Mon travail s’inspire de l’univers du design expérimental, des ambiances cinématographiques et des formes intemporelles. Chaque projet est pour moi une opportunité d’explorer de nouvelles méthodes, de repousser les limites et de créer des univers cohérents et mémorables.
                 </p>
-            </article>
-
-            <article class="project-card project-card--green" aria-labelledby="project-title-3">
-                <header class="project-card__header">
-                    <h2 id="project-title-3" class="project-card__title">TOUCHÉ DE LA MORT</h2>
-                    <p class="project-card__meta" aria-label="Technologies du projet">
-                        <span>Vidéo</span>
-                    </p>
-                </header>
-
-                <figure class="project-card__media">
-                    <img src="./assets/images/touche_de_la_mort_01.JPG" alt="Projet Touche de la mort" />
-                </figure>
-
-                <p class="project-card__description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <p class="about-section__text">
+                    Je conçois des images qui parlent, qui captivent et qui laissent une impression durable. Que ce soit pour un projet de motion design, une animation ou une direction artistique, j’essaie toujours de faire passer une intention claire et une identité visuelle forte.
                 </p>
-            </article>
+            </div>
+        </section>
 
-            <article class="project-card project-card--red" aria-labelledby="project-title-4">
-                <header class="project-card__header">
-                    <h2 id="project-title-4" class="project-card__title">5686 11E AVENUE</h2>
-                    <p class="project-card__meta" aria-label="Technologies du projet">
-                        <span>Animation</span> - <span>Unity</span>
-                    </p>
-                </header>
+        <section class="contact-section" id="contact" aria-labelledby="contact-title">
+            <h2 id="contact-title" class="contact-section__title">CONTACT</h2>
 
-                <figure class="project-card__media">
-                    <img src="./assets/images/jeu_vr_main_menu.jpg" alt="Projet 5686 11e avenue" />
-                </figure>
+            <div class="contact-section__content">
+                <p class="contact-section__lead">Discutons de ton prochain projet.</p>
 
-                <p class="project-card__description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-            </article>
-        </section><!-->
+                <div class="contact-section__links">
+                    <a href="mailto:contact@pablo-pereira.com">contact@pablo-pereira.com</a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+                    <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+                </div>
+            </div>
+        </section>
     </main>
     <script src="./js/main.js" defer></script>
 </body>

@@ -118,15 +118,27 @@ function createProjectsSection() {
 
 async function init() 
 {
+    const main = document.querySelector("main");
+    if (!main) {
+        return;
+    }
+
     let projectsArray = [];
-    const projects = await fetchData();
+    let projects = { records: [] };
+
+    try {
+        projects = await fetchData();
+    } catch (error) {
+        console.error("Impossible de charger les projets depuis Airtable.", error);
+    }
+
     const projectsGrid = document.querySelector(".projects-grid") || createProjectsSection();
 
     if (!document.querySelector(".projects-grid")) {
-        document.querySelector("main").appendChild(projectsGrid);
+        main.insertBefore(projectsGrid, document.querySelector(".about-section"));
     }
 
-    projects.records.forEach(project => {
+    (projects.records || []).forEach(project => {
         projectsArray.push(project.fields);
     });
 
