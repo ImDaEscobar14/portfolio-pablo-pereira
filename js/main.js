@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
+	// Vérifie les préférences d'animation avant d'activer les effets visuels
 	const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 	let backgroundFrame = null;
 
+	// Déplace légèrement du background en fonction de la position de la souris
 	if (!prefersReducedMotion) {
 		window.addEventListener("pointermove", (event) => {
 			if (backgroundFrame !== null) {
@@ -19,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	}
 
+	// Donne un pettit effet 3D aux cartes de projets lorsque la souris les survole
 	if (!prefersReducedMotion) {
 		document.addEventListener("pointermove", (event) => {
 			const card = event.target.closest(".project-card");
@@ -27,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				return;
 			}
 
+			// Calcule la position de la souris par rapport à la carte et applique une rotation en conséquence
 			const cardBounds = card.getBoundingClientRect();
 			const horizontalPosition = (event.clientX - cardBounds.left) / cardBounds.width - 0.5;
 			const verticalPosition = (event.clientY - cardBounds.top) / cardBounds.height - 0.5;
@@ -47,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	}
 
+	// Récupère les éléments nécessaires au fonctionnement de la carrousel
 	const carousel = document.querySelector(".competences-carousel");
 
 	if (!carousel) {
@@ -58,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const nextButton = carousel.querySelector(".competences-carousel__arrow--next");
 	const dots = Array.from(carousel.querySelectorAll(".competences-carousel__dot"));
 
+	// Prépare les variables utilisées pour déplacer la carrousel en boucle
 	const originalCards = Array.from(track.querySelectorAll(".competence-card"));
 	let slideCount = originalCards.length;
 	let clonesPerSide = 0;
@@ -68,10 +74,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	const getSlidesPerView = () => (window.matchMedia("(max-width: 760px)").matches ? 1 : 3);
 
+	// Réinitialise la piste avec les cartes originales avant de créer les copies
 	const clearTrack = () => {
 		track.replaceChildren(...originalCards.map((card) => card.cloneNode(true)));
 	};
 
+	// Met à jour le point actif selon la carte actuellement affichée
 	const updateDots = () => {
 		if (!dots.length) {
 			return;
@@ -83,6 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	};
 
+	// Calcule la distance nécessaire pour passer d'une carte à la suivante
 	const measureStep = () => {
 		const slide = track.querySelector(".competence-card");
 
@@ -97,6 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		slideStep = slideWidth + gap;
 	};
 
+	// Construit la carrousel infinie avec des copies au début et à la fin
 	const buildCarousel = () => {
 		const slidesPerView = getSlidesPerView();
 		clonesPerSide = slideCount;
@@ -137,6 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	};
 
+	// Déplace la carrousel dans la direction demandée
 	const moveCarousel = (direction) => {
 		if (isAnimating || !slideStep) {
 			return;
@@ -147,6 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		track.style.transform = `translateX(${-((clonesPerSide + currentIndex) * slideStep)}px)`;
 	};
 
+	// Relance le défilement automatique après une interaction manuelle
 	const restartAutoplay = () => {
 		window.clearInterval(autoplayTimer);
 		autoplayTimer = window.setInterval(() => {
@@ -154,6 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		}, 3500);
 	};
 
+	// Replace la carrousel sur les cartes originales lorsqu'une copie est atteinte
 	track.addEventListener("transitionend", () => {
 		if (currentIndex >= slideCount) {
 			currentIndex = 0;
@@ -183,6 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		updateDots();
 	});
 
+	// Contrôles manuels de la carrousel
 	prevButton.addEventListener("click", () => {
 		moveCarousel(-1);
 		restartAutoplay();
@@ -193,11 +207,13 @@ document.addEventListener("DOMContentLoaded", () => {
 		restartAutoplay();
 	});
 
+	// Reconstruit la carrousel lorsque la largeur de l'écran change
 	window.addEventListener("resize", () => {
 		buildCarousel();
 		restartAutoplay();
 	});
 
+	// Initialise la carrousel et son défilement automatique
 	buildCarousel();
 	restartAutoplay();
 });

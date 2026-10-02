@@ -1,47 +1,9 @@
+// Variables qui gardent le popup et le projet actuellement affiché
 let projectModal = null;
 let projectModalElements = null;
 let currentProjectIndex = 0;
 
-function getProjectDescription(project) {
-	return project.description || "Découvrez ce projet dans le portfolio. Cette réalisation présente mon approche de la vidéo, de l’animation et de la création visuelle.";
-}
-
-function getProjectExtraDescription(project) {
-	return project.detail || project.longDescription || project.details || project.subtitle || project.summary || "";
-}
-
-function getProjectVideoUrl(project) {
-	return project.video || "";
-}
-
-function getYouTubeEmbedUrl(videoUrl) {
-	const normalizedUrl = String(videoUrl).trim();
-
-	if (/youtube\.com\/embed\//i.test(normalizedUrl)) {
-		return normalizedUrl;
-	}
-
-	try {
-		const parsedUrl = new URL(normalizedUrl);
-		const host = parsedUrl.hostname.replace(/^www\./, "");
-		let videoId = "";
-
-		if (host === "youtu.be") {
-			videoId = parsedUrl.pathname.split("/").filter(Boolean)[0] || "";
-		} else if (host.endsWith("youtube.com")) {
-			videoId = parsedUrl.searchParams.get("v") || "";
-
-			if (!videoId && parsedUrl.pathname.startsWith("/shorts/")) {
-				videoId = parsedUrl.pathname.split("/")[2] || "";
-			}
-		}
-
-		return videoId ? `https://www.youtube.com/embed/${videoId}?rel=0` : "";
-	} catch (error) {
-		return "";
-	}
-}
-
+// Création de la structure HTML du popup
 function createProjectModal() {
 	const dialog = createElement("dialog", "project-modal");
 	const panel = createElement("div", "project-modal__panel");
@@ -111,6 +73,7 @@ function createProjectModal() {
 		nextButton
 	};
 
+	// Gestion des boutons de fermeture et de navigation
 	closeButton.addEventListener("click", () => {
 		dialog.close();
 	});
@@ -137,6 +100,7 @@ function createProjectModal() {
 	return dialog;
 }
 
+// Mise à jour du pop up avec les données du projet sélectionné
 function renderProjectModal(projectIndex) {
 	if (!projectItems.length || !projectModalElements) {
 		return;
@@ -162,6 +126,7 @@ function renderProjectModal(projectIndex) {
 	projectModalElements.counter.textContent = `${currentProjectIndex + 1} / ${projectItems.length}`;
 	projectModalElements.tags.replaceChildren();
 
+	// Affichage de la description détaillée du projet
 	if (extraDescription) {
 		const paragraphs = String(extraDescription)
 			.split(/\n+/)
@@ -177,6 +142,7 @@ function renderProjectModal(projectIndex) {
 	projectModalElements.videoSection.hidden = false;
 	projectModalElements.descriptionSection.hidden = false;
 
+	// Affichage de la vidéo selon le type d'URL de mon Airtable
 	if (videoUrl) {
 		const normalizedUrl = String(videoUrl).trim();
 
@@ -218,6 +184,7 @@ function renderProjectModal(projectIndex) {
 		projectModalElements.descriptionSection.hidden = true;
 	}
 
+	// Affichage des technologies associées au projet
 	if (technologyList.length === 0) {
 		projectModalElements.tags.appendChild(createElement("span", "project-modal__tag", "Aucune technologie indiquée"));
 	} else {
@@ -227,6 +194,7 @@ function renderProjectModal(projectIndex) {
 	}
 }
 
+// Ouverture du popup et activation du verrouillage du scroll de la page
 function openProjectModal(projectIndex) {
 	if (!projectModal) {
 		projectModal = createProjectModal();
@@ -241,3 +209,22 @@ function openProjectModal(projectIndex) {
 		projectModal.showModal();
 	}
 }
+
+// Ajout d'un gestionnaire d'événement pour ouvrir le modal
+document.addEventListener("click", (event) => {
+	const clickedMedia = event.target.closest(".project-card__media");
+
+	if (!clickedMedia) {
+		return;
+	}
+
+	const projectCard = clickedMedia.closest(".project-card");
+	const projectIndex = Number(projectCard?.dataset.projectIndex);
+
+	if (!Number.isInteger(projectIndex)) {
+		return;
+	}
+
+	event.preventDefault();
+	openProjectModal(projectIndex);
+});

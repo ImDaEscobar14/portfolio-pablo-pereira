@@ -3,8 +3,10 @@ const base_id =  `appT6MxCMM1TOQtJh`;
 const table_id = `projects`;
 const token = "patIMVurKxlCvdXXD.5280faf7e8793979a73f929dfe704d60dbd4abca8f4dc1d0379c0455ac477565";
 
+
 let projectItems = [];
 
+// function qui sert à récupérer mes données sur Airtable et de les stocker dans la variable
 async function fetchData() 
 {
     const response = await fetch(`https://api.airtable.com/v0/${base_id}/${table_id}`, {
@@ -15,6 +17,7 @@ async function fetchData()
     return await response.json();
 }
 
+// function qui sert à récupérer mes données sur Airtable et de les stocker dans la variable au lieu de toujours les écrire dans le code
 function createElement(tagName, className, textContent) {
     const element = document.createElement(tagName);
     element.className = className;
@@ -26,7 +29,10 @@ function createElement(tagName, className, textContent) {
     return element;
 }
 
+// function qui sert à récuperer l'image que j'ai mis dans Airtable
 function getProjectImage(project) {
+
+    // Vérifie si le projet a une image définie dans les champs image, imageUrl, cover, images ou Image dans Airtable
     const image = project.image || project.imageUrl || project.cover || project.images || project.Image;
 
     if (Array.isArray(image)) {
@@ -36,7 +42,7 @@ function getProjectImage(project) {
     if (image) {
         return image;
     }
-
+    // Si aucune image n'est trouvée dans Airtable, utilise une image locale par défaut en fonction du titre du projet
     const localImages = {
         PURGATOIRE: "./assets/images/purgatoire_live_01.jpg",
         ANTRUM: "./assets/images/antrum_projet_video_01.jpg",
@@ -47,10 +53,56 @@ function getProjectImage(project) {
     return localImages[project.title || project.name] || "";
 }
 
+// function qui sert à récuperer le titre que j'ai mis dans Airtable
 function getProjectTitle(project) {
     return project.title || project.name || "Projet sans titre";
 }
 
+// function qui sert à récupérer la description que j'ai mis dans Airtable
+function getProjectDescription(project) {
+    return project.description || "Découvrez ce projet dans le portfolio. Cette réalisation présente mon approche de la vidéo, de l’animation et de la création visuelle.";
+}
+
+// function qui sert à récupérer la description détaillée que j'ai mis dans Airtable
+function getProjectExtraDescription(project) {
+    return project.detail || project.longDescription || project.details || project.subtitle || project.summary || "";
+}
+
+// function qui sert à récupérer la vidéo que j'ai mis dans Airtable
+function getProjectVideoUrl(project) {
+    return project.video || "";
+}
+
+// function qui sert à récupérer l'URL de la vidéo que j'ai mis dans Airtable
+function getYouTubeEmbedUrl(videoUrl) {
+    const normalizedUrl = String(videoUrl).trim();
+
+    if (/youtube\.com\/embed\//i.test(normalizedUrl)) {
+        return normalizedUrl;
+    }
+
+    try {
+        const parsedUrl = new URL(normalizedUrl);
+        const host = parsedUrl.hostname.replace(/^www\./, "");
+        let videoId = "";
+
+        if (host === "youtu.be") {
+            videoId = parsedUrl.pathname.split("/").filter(Boolean)[0] || "";
+        } else if (host.endsWith("youtube.com")) {
+            videoId = parsedUrl.searchParams.get("v") || "";
+
+            if (!videoId && parsedUrl.pathname.startsWith("/shorts/")) {
+                videoId = parsedUrl.pathname.split("/")[2] || "";
+            }
+        }
+
+        return videoId ? `https://www.youtube.com/embed/${videoId}?rel=0` : "";
+    } catch (error) {
+        return "";
+    }
+}
+
+// function qui sert à récuperer les technologies que j'ai mis dans Airtable
 function getProjectTechnologies(project) {
     const technologies = project.technologies || project.category || project.type || "";
 
@@ -64,7 +116,10 @@ function getProjectTechnologies(project) {
         .filter(Boolean);
 }
 
+// function qui sert à récuperer la description que j'ai mis dans Airtable
 function createProjectCard(project, index) {
+
+    // Récupération des données du projet
     const fields = project.fields || project;
     const projectId = Number(fields.id || project.id || index + 1);
     const cardColor = projectId === 2 || projectId === 3 ? "red" : "green";
@@ -76,10 +131,13 @@ function createProjectCard(project, index) {
 
     card.dataset.projectId = projectId;
     card.dataset.projectIndex = String(index);
+
+    // Configuration du bouton pour ouvrir le modal
     button.type = "button";
     button.setAttribute("aria-label", `Ouvrir le projet ${title} dans un popup`);
     button.setAttribute("aria-haspopup", "dialog");
 
+    // Création de l'en-tête du projet avec le titre et les technologies
     const header = createElement("header", "project-card__header");
     header.appendChild(createElement("h3", "project-card__title", title));
 
@@ -90,6 +148,7 @@ function createProjectCard(project, index) {
     header.appendChild(tags);
     button.appendChild(header);
 
+    // Création de l'image du projet si elle existe sur mon Airtable 
     if (imageUrl) {
         const media = createElement("figure", "project-card__media");
         const image = document.createElement("img");
@@ -100,25 +159,16 @@ function createProjectCard(project, index) {
     }
     card.appendChild(button);
 
-    button.addEventListener("click", (event) => {
-        const clickedMedia = event.target.closest(".project-card__media");
-
-        if (!clickedMedia) {
-            return;
-        }
-
-        event.preventDefault();
-        openProjectModal(index);
-    });
-
     return card;
 }
 
+// function qui sert à créer la section des projets 
 function createProjectsSection() {
+    //Crée la section des projets avec un titre et un conteneur pour les cartes de projet
     const section = createElement("section", "projects-grid");
     section.id = "projets";
     section.setAttribute("aria-labelledby", "projects-title");
-
+    // Crée le titre de la section des projets
     const title = createElement("h2", "projects-grid__title", "PROJETS");
     title.id = "projects-title";
     section.appendChild(title);
@@ -126,8 +176,10 @@ function createProjectsSection() {
     return section;
 }
 
+// function qui sert à initialiser le code pour que tout fonctionne bien
 async function init() 
 {
+    // Ajoute un effet de rotation aux cartes de projet lorsque la souris se déplace dessus
     const main = document.querySelector("main");
     if (!main) {
         return;
@@ -136,6 +188,7 @@ async function init()
     let projectsArray = [];
     let projects = { records: [] };
 
+    // Récupère les données des projets depuis Airtable et les garde dans la variable projects
     try {
         projects = await fetchData();
     } catch (error) {

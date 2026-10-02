@@ -1,3 +1,4 @@
+/* ================= BASE ================= */
 html {
     scroll-behavior: smooth;
 }
@@ -6,6 +7,7 @@ html {
     box-sizing: border-box;
 }
 
+/* ================= VARIABLES ================= */
 :root {
     --bg-dark: #171d22;
     --bg-panel: #1b242a;
@@ -40,6 +42,7 @@ h6 {
     font-family: "Anta", sans-serif;
 }
 
+/* ================= FOND ================= */
 body::before {
     position: fixed;
     inset: 0;
@@ -55,6 +58,7 @@ body::before {
     opacity: 0.22;
 }
 
+/* Couche de lumière animée */
 body::after {
     position: fixed;
     inset: -12%;
@@ -71,6 +75,7 @@ body::after {
     animation: background-light-pulse 7s ease-in-out infinite alternate;
 }
 
+/* Animation du fond */
 @keyframes background-light-pulse {
     0% {
         opacity: 0.28;
@@ -94,6 +99,7 @@ body::after {
     }
 }
 
+/* ================= HEADER ET FOOTER ================= */
 header {
     position: relative;
     z-index: 1;
@@ -162,6 +168,7 @@ nav a {
     letter-spacing: 0.04em;
 }
 
+/* ================= INTRODUCTION ================= */
 .page-content {
     position: relative;
     z-index: 1;
@@ -257,6 +264,7 @@ nav a {
     color: var(--text-accent);
 }
 
+/* ================= VIDEO ================= */
 .demo-video {
     width: 100%;
     margin: 0 auto 2.25rem;
@@ -305,6 +313,7 @@ nav a {
     filter: brightness(1.08);
 }
 
+/* ================= CARROUSEL ================= */
 .competences-carousel {
     width: 100%;
     margin: 0 auto 2.25rem;
@@ -506,7 +515,9 @@ nav a {
     flex: 0 0 100%;
 }
 
-.about-section {
+/* ================= A PROPOS ET CONTACT ================= */
+.about-section,
+.contact-section {
     margin-top: 2.7rem;
     padding: clamp(0.85rem, 1.8vw, 1.4rem);
     background: rgba(0, 0, 0, 0.76);
@@ -534,12 +545,6 @@ nav a {
 
 .about-section__text:last-child {
     margin-bottom: 0;
-}
-
-.contact-section {
-    margin-top: 2.7rem;
-    padding: clamp(0.85rem, 1.8vw, 1.4rem);
-    background: rgba(0, 0, 0, 0.76);
 }
 
 .about-section__title,
@@ -592,21 +597,7 @@ nav a {
     text-decoration: underline;
 }
 
-@media (max-width: 760px) {
-    .about-section__wrapper {
-        grid-template-columns: 1fr;
-    }
-
-    .about-section__media img {
-        width: min(100%, 320px);
-    }
-
-    .contact-section__links {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-}
-
+/* ================= PROJETS ================= */
 .project-card {
     flex: 1 1 calc(50% - 1rem);
     max-width: calc(50% - 1rem);
@@ -720,7 +711,6 @@ nav a {
 .project-card__media img {
     display: block;
     width: 100%;
-    max-width: 100%;
     margin: 0 auto;
     height: auto;
     min-height: 300px;
@@ -744,6 +734,7 @@ nav a {
         0 0 110px color-mix(in srgb, var(--media-glow-color) 22%, transparent);
 }
 
+/* Description des cartes */
 .project-card__description {
     margin: 0;
     padding: 1.4rem 1.6rem 2rem;
@@ -753,26 +744,32 @@ nav a {
     text-align: left;
 }
 
-html {
+/* ================= SCROLLBAR ================= */
+html,
+.project-modal__panel {
     scrollbar-width: thin;
     scrollbar-color: var(--text-accent) rgba(0, 0, 0, 0.5);
 }
 
-html::-webkit-scrollbar {
+html::-webkit-scrollbar,
+.project-modal__panel::-webkit-scrollbar {
     width: 0.85rem;
 }
 
-html::-webkit-scrollbar-track {
+html::-webkit-scrollbar-track,
+.project-modal__panel::-webkit-scrollbar-track {
     background: rgba(0, 0, 0, 0.5);
 }
 
-html::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb,
+.project-modal__panel::-webkit-scrollbar-thumb {
     background: linear-gradient(180deg, var(--text-accent), #8f0b0d);
     border: 2px solid rgba(0, 0, 0, 0.5);
     border-radius: 999px;
 }
 
-html::-webkit-scrollbar-thumb:hover {
+html::-webkit-scrollbar-thumb:hover,
+.project-modal__panel::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(180deg, #ff4346, var(--text-accent));
 }
 
@@ -788,6 +785,7 @@ body.project-modal-open::-webkit-scrollbar {
     height: 0;
 }
 
+/* ================= POP UP ================= */
 .project-modal {
     width: min(97vw, 88rem);
     padding: 0;
@@ -821,26 +819,6 @@ body.project-modal-open::-webkit-scrollbar {
     overflow-x: hidden;
     overscroll-behavior: contain;
     scrollbar-gutter: stable;
-    scrollbar-width: thin;
-    scrollbar-color: var(--text-accent) rgba(0, 0, 0, 0.5);
-}
-
-.project-modal__panel::-webkit-scrollbar {
-    width: 0.85rem;
-}
-
-.project-modal__panel::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.project-modal__panel::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, var(--text-accent), #8f0b0d);
-    border: 2px solid rgba(0, 0, 0, 0.5);
-    border-radius: 999px;
-}
-
-.project-modal__panel::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #ff4346, var(--text-accent));
 }
 
 .project-modal__close {
@@ -1046,6 +1024,7 @@ body.project-modal-open::-webkit-scrollbar {
     text-transform: uppercase;
 }
 
+/* ================= RESPONSIVE MOBILE ================= */
 @media (max-width: 760px) {
     body {
         background-size: auto 130%;
@@ -1088,6 +1067,19 @@ body.project-modal-open::-webkit-scrollbar {
         aspect-ratio: 4 / 3;
     }
 
+    .about-section__wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .about-section__media img {
+        width: min(100%, 320px);
+    }
+
+    .contact-section__links {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
     header {
         flex-direction: column;
         align-items: flex-start;
@@ -1114,10 +1106,6 @@ body.project-modal-open::-webkit-scrollbar {
         flex: 0 0 100%;
         min-height: 165px;
         padding: 0.9rem 0.9rem 0.85rem;
-    }
-
-    .competence-card__text {
-        max-width: 100%;
     }
 
     .competences-carousel__arrow {
@@ -1157,9 +1145,6 @@ body.project-modal-open::-webkit-scrollbar {
 
     .project-modal__panel {
         padding: 0.9rem;
-    }
-
-    .project-modal__panel {
         max-height: calc(100dvh - 0.75rem);
     }
 
