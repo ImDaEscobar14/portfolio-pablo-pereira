@@ -57,7 +57,7 @@ function getProjectDescription(project) {
 }
 
 function getProjectExtraDescription(project) {
-    return project.longDescription || project.details || project.subtitle || project.summary || "";
+    return project.detail || project.longDescription || project.details || project.subtitle || project.summary || "";
 }
 
 function getProjectVideoUrl(project) {

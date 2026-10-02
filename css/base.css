@@ -161,19 +161,13 @@ nav a {
 }
 
 .intro-portfolio__title {
-    display: inline-block;
     margin: 0;
-    padding: 0.25em 0.4em 0.3em;
     color: var(--text-primary);
     font-size: clamp(3.2rem, 7vw, 11rem);
     line-height: 0.82;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     font-weight: 400;
-    background: rgba(0, 0, 0, 0.16);
-    box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.28),
-        0 0 0 1px rgba(255, 255, 255, 0.08);
     text-shadow: 0 0 0 #fff, 0 0 18px rgba(255, 255, 255, 0.12);
 }
 
@@ -216,6 +210,11 @@ nav a {
     letter-spacing: 0.05em;
     font-size: clamp(1rem, 1.4vw, 1.8rem);
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.intro-portfolio__button:not(.intro-portfolio__button--primary) {
+    background: #000;
+    border-color: rgba(255, 255, 255, 0.18);
 }
 
 .intro-portfolio__button--primary {
@@ -712,6 +711,13 @@ nav a {
 html.project-modal-open,
 body.project-modal-open {
     overflow: hidden;
+    scrollbar-width: none;
+}
+
+html.project-modal-open::-webkit-scrollbar,
+body.project-modal-open::-webkit-scrollbar {
+    width: 0;
+    height: 0;
 }
 
 .project-modal {
@@ -721,7 +727,8 @@ body.project-modal-open {
     background: transparent;
     color: var(--text-primary);
     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04);
-    overflow: hidden;
+    overflow: clip;
+    -ms-overflow-style: none;
     scrollbar-width: none;
 }
 
@@ -742,7 +749,8 @@ body.project-modal-open {
     padding: 1.5rem;
     background: rgba(18, 18, 20, 0.98);
     max-height: calc(100dvh - 1rem);
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     overscroll-behavior: contain;
     scrollbar-gutter: stable;
     scrollbar-width: thin;
