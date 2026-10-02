@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/layout.css">
     <script src="./js/data.js"></script>
+    <script src="./js/composants/modal.js"></script>
 </head>
 <body>
     <header id="top">
@@ -32,10 +33,10 @@
             </h1>
 
             <p class="intro-portfolio__skills">VIDÉO, ANIMATION &amp; MODÉLISATION</p>
-
+            
             <div class="intro-portfolio__actions">
                 <a class="intro-portfolio__button intro-portfolio__button--primary" href="#projets">MES PROJETS</a>
-                <a class="intro-portfolio__button" href="mailto:contact@pablo-pereira.com">ME CONTACTER</a>
+                <a class="intro-portfolio__button" href="mailto:Pablo_Pereira14@outlook.com">ME CONTACTER</a>
             </div>
         </section>
 
@@ -51,9 +52,8 @@
             </div>
         </section>
 
+        <h2 id="competences-title" class="competences-carousel__title">COMPÉTENCES</h2>
         <section class="competences-carousel" aria-labelledby="competences-title">
-            <h2 id="competences-title" class="competences-carousel__title">COMPÉTENCES</h2>
-
             <div class="competences-carousel__viewport" aria-roledescription="carousel" aria-label="Carrousel des compétences">
                 <button class="competences-carousel__arrow competences-carousel__arrow--prev" type="button" aria-label="Faire défiler les compétences vers la droite">
                     <span aria-hidden="true">&#10094;</span>
@@ -64,40 +64,40 @@
                         <article class="competence-card">
                             <div class="competence-card__header">
                                 <span class="competence-card__index">01</span>
-                                <h3 class="competence-card__label">CRÉATIVITÉ</h3>
+                                <h3 class="competence-card__label">CRÉATIVITÉ ET CONCEPTION</h3>
                             </div>
                             <p class="competence-card__text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Développement d’idées originales et capacité à transformer un concept en projet visuel.
                             </p>
                         </article>
 
                         <article class="competence-card">
                             <div class="competence-card__header">
                                 <span class="competence-card__index">02</span>
-                                <h3 class="competence-card__label">CRÉATIVITÉ</h3>
+                                <h3 class="competence-card__label">CRÉATION NUMÉRIQUE</h3>
                             </div>
                             <p class="competence-card__text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Conception de contenus interactifs et utilisation de logiciels de création multimédia.
                             </p>
                         </article>
 
                         <article class="competence-card">
                             <div class="competence-card__header">
                                 <span class="competence-card__index">03</span>
-                                <h3 class="competence-card__label">CRÉATIVITÉ</h3>
+                                <h3 class="competence-card__label">PHOTOGRAPHIE VIDÉO</h3>
                             </div>
                             <p class="competence-card__text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Prise de vue, cadrage, éclairage et retouche photo.
                             </p>
                         </article>
 
                         <article class="competence-card">
                             <div class="competence-card__header">
                                 <span class="competence-card__index">04</span>
-                                <h3 class="competence-card__label">CRÉATIVITÉ</h3>
+                                <h3 class="competence-card__label">MONTAGE VIDÉO</h3>
                             </div>
                             <p class="competence-card__text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                 Montage, transitions, effets visuels et création de contenu audiovisuel.
                             </p>
                         </article>
 
@@ -107,7 +107,7 @@
                                 <h3 class="competence-card__label">CRÉATIVITÉ</h3>
                             </div>
                             <p class="competence-card__text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Création de visuels, affiches, logos et compositions graphiques.
                             </p>
                         </article>
                     </div>
@@ -132,14 +132,16 @@
 
             <div class="about-section__content about-section__content--single">
                 <p class="about-section__text">
-                    Je suis Pablo, un créatif passionné par la vidéo, l’animation et la modélisation 3D. J’aime donner vie à des idées visuelles fortes, immersives et chargées d’émotion, en associant technique, esthétique et narration.
+                    Étudiant de 26 ans en multimédia, avec un intérêt particulier pour la création et la réalisation de projets visuels.
                 </p>
                 <p class="about-section__text">
-                    Mon travail s’inspire de l’univers du design expérimental, des ambiances cinématographiques et des formes intemporelles. Chaque projet est pour moi une opportunité d’explorer de nouvelles méthodes, de repousser les limites et de créer des univers cohérents et mémorables.
+                    Le travail d’équipe occupe une place importante dans ma façon de travailler. La collaboration, le partage d’idées et la mise en commun des compétences permettent de développer des projets variés et stimulants.
                 </p>
                 <p class="about-section__text">
-                    Je conçois des images qui parlent, qui captivent et qui laissent une impression durable. Que ce soit pour un projet de motion design, une animation ou une direction artistique, j’essaie toujours de faire passer une intention claire et une identité visuelle forte.
+                    Mon principal intérêt se situe dans le domaine de la vidéo, notamment la conception, le montage, la prise de vue et le cadrage. Je m’intéresse également à l’animation et à la modélisation 3D, qui offrent différentes possibilités de création et de narration visuelle.
                 </p>
+                <p class="about-section__text">
+                    Curieux et motivé, je cherche constamment à développer mes compétences, à découvrir de nouvelles techniques et à mettre mes connaissances en pratique à travers différents projets.
             </div>
         </section>
 
@@ -150,13 +152,18 @@
                 <p class="contact-section__lead">Discutons de ton prochain projet.</p>
 
                 <div class="contact-section__links">
-                    <a href="mailto:contact@pablo-pereira.com">contact@pablo-pereira.com</a>
-                    <a href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+                    <a href="mailto:contact@Pablo_Pereira14@outlook.com.com">E-MAIL</a>
+                    <a href="https://www.instagram.com/pablo__pereira/" target="_blank" rel="noreferrer">Instagram</a>
                     <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
                 </div>
             </div>
         </section>
     </main>
+
+    <footer class="site-footer">
+        <p class="site-footer__copyright">© 2026 Pablo Pereira</p>
+    </footer>
+
     <script src="./js/main.js" defer></script>
 </body>
 

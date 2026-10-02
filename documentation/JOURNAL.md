@@ -60,3 +60,26 @@ j'aimerais que tu me fasse une zone au dessus de mes projets pour ma caroussel. 
 j'aimerais que la caroussel soit anime par du js et quelle defille vers la gauche. Les bande rouge est juste un indicatif quon peut appuyer pour manuellemment faire diffiler la caroussel, on peut la changer pour que ce soit des fleche en soit.
 
 Mon résultat est très satisfaisant, j'ai du corriger quelques problèmes visuelle que j'avais. Les flèches étaient caché par les cartes et peu visible. J'ai aussi fait en sorte que la zone de ma page soit plus grande.
+
+---
+
+### 09-30-26
+
+PROMPT :
+j'aimerais que tu suive la structure de mon design mais en suivant data.js pour la forme et que pour maintenant j'aimerais que ce qui touche mes cartes de projets soient dans data.js pour suivre mon airtable
+
+pourrais-tu faire en sorte que quand je hover sur la cartes de mes projets il y ai un effet de hover et aussi un léger mouvement avec la carte.
+
+Mes résultats étaient satisfaisant au long terme mais difficile au début car j'avais commencé mes cartes de projets dans main.js et dans le index.html. Une fois que j'ai bien fais le lien entre airtable et mon data.js ca avancait beaucoup mieux. Mes hovers sur les cartes au début avaient beaucoup de difficulté car il passait par dessus la barre de mon titre mais par la suite j'ai demandé à faire que le hover soit sur la carte complète.
+
+---
+
+### 10-01-26
+
+PROMPT :
+J'aimerais que mes cartes quand j'appuie fassent apparaitre un pop up avec un bouton fermer au top et des boutons pour precedent et suivant en bas.
+
+ PROMPT : 
+j'aimerais que ma barre de scroll aient un esthetic similaire a le reste de ma page.
+
+Mon résultats au début était correct, j'ai du travailler sur les cartes pour les faire parraitre plus belle a mon gout, j'ai par la suite ajouté mes vidéos et descriptions de projets grâçe à mon airtable 
