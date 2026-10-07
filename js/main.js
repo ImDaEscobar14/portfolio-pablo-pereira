@@ -1,7 +1,211 @@
 document.addEventListener("DOMContentLoaded", () => {
+	document.documentElement.classList.add("js-enabled");
+
 	// Vérifie les préférences d'animation avant d'activer les effets visuels
 	const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 	let backgroundFrame = null;
+	const header = document.querySelector("header");
+	const menuToggle = document.querySelector(".header__toggle");
+	const navigation = document.querySelector("#main-navigation");
+	const mobileMenuQuery = window.matchMedia("(max-width: 760px)");
+	const projectCards = new Set();
+	const projectCardOrders = new Map();
+	let projectCardCounter = 0;
+	let projectScrollFrame = null;
+	let lastScrollY = window.scrollY;
+	let scrollDirection = 1;
+	const cardStaggerDuration = 120;
+
+	const applyProjectCardScrollState = (card, isVisible) => {
+		const cardOrder = projectCardOrders.get(card) ?? 0;
+		const reverseDelay = Math.max(0, (projectCardCounter - cardOrder - 1) * cardStaggerDuration);
+
+		card.style.setProperty("--card-scroll-offset", isVisible ? "0px" : "24px");
+		card.style.setProperty("--card-scroll-opacity", isVisible ? "1" : "0");
+		card.style.setProperty("--card-scroll-exit-delay", `${reverseDelay}ms`);
+
+		if (isVisible) {
+			card.classList.add("project-card--revealed");
+			card.classList.remove("project-card--leaving");
+			return;
+		}
+
+		card.classList.remove("project-card--revealed");
+		card.classList.add("project-card--leaving");
+	};
+
+	const updateProjectCardScrollState = () => {
+		projectScrollFrame = null;
+
+		if (!projectCards.size) {
+			return;
+		}
+
+		if (prefersReducedMotion) {
+			projectCards.forEach((card) => {
+				card.style.setProperty("--card-scroll-offset", "0px");
+				card.style.setProperty("--card-scroll-opacity", "1");
+				card.classList.add("project-card--revealed");
+			});
+			return;
+		}
+
+		const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+		const revealThreshold = viewportHeight * 0.82;
+		const hideThreshold = viewportHeight * 0.38;
+
+		projectCards.forEach((card) => {
+			if (!(card instanceof HTMLElement)) {
+				return;
+			}
+
+			const rect = card.getBoundingClientRect();
+			const isVisible = scrollDirection >= 0
+				? rect.top <= revealThreshold && rect.bottom > 0
+				: rect.top <= hideThreshold && rect.bottom > 0;
+
+			applyProjectCardScrollState(card, isVisible);
+		});
+	};
+
+	const scheduleProjectCardScrollStateUpdate = () => {
+		if (projectScrollFrame !== null) {
+			return;
+		}
+
+		projectScrollFrame = window.requestAnimationFrame(updateProjectCardScrollState);
+	};
+
+	const registerProjectCard = (card) => {
+		if (!(card instanceof HTMLElement)) {
+			return;
+		}
+
+		if (!projectCardOrders.has(card)) {
+			projectCardOrders.set(card, projectCardCounter);
+			card.style.setProperty("--card-scroll-delay", `${projectCardCounter * cardStaggerDuration}ms`);
+			projectCardCounter += 1;
+		}
+
+		projectCards.add(card);
+		scheduleProjectCardScrollStateUpdate();
+	};
+
+	const scanForProjectCards = (root) => {
+		if (!(root instanceof Element || root instanceof Document)) {
+			return;
+		}
+
+		if (root instanceof Element && root.matches(".project-card")) {
+			registerProjectCard(root);
+		}
+
+		root.querySelectorAll?.(".project-card").forEach(registerProjectCard);
+	};
+
+	const setupProjectRevealAnimation = () => {
+		scanForProjectCards(document);
+
+		const mutationObserver = new MutationObserver((mutations) => {
+			mutations.forEach((mutation) => {
+				mutation.addedNodes.forEach((node) => {
+					if (!(node instanceof HTMLElement)) {
+						return;
+					}
+
+					if (node.matches?.(".project-card")) {
+						registerProjectCard(node);
+						return;
+					}
+
+					node.querySelectorAll?.(".project-card").forEach((card) => {
+						registerProjectCard(card);
+					});
+				});
+			});
+		});
+
+		mutationObserver.observe(document.body, { childList: true, subtree: true });
+
+		window.addEventListener("scroll", () => {
+			const currentScrollY = window.scrollY;
+			scrollDirection = currentScrollY >= lastScrollY ? 1 : -1;
+			lastScrollY = currentScrollY;
+			scheduleProjectCardScrollStateUpdate();
+		}, { passive: true });
+
+		window.addEventListener("resize", scheduleProjectCardScrollStateUpdate, { passive: true });
+		updateProjectCardScrollState();
+	};
+
+	setupProjectRevealAnimation();
+
+	const closeMobileMenu = () => {
+		if (!header || !menuToggle || !navigation) {
+			return;
+		}
+
+		header.classList.remove("header--menu-open");
+		menuToggle.setAttribute("aria-expanded", "false");
+		menuToggle.setAttribute("aria-label", "Ouvrir le menu principal");
+		navigation.hidden = true;
+	};
+
+	const openMobileMenu = () => {
+		if (!header || !menuToggle || !navigation) {
+			return;
+		}
+
+		header.classList.add("header--menu-open");
+		menuToggle.setAttribute("aria-expanded", "true");
+		menuToggle.setAttribute("aria-label", "Fermer le menu principal");
+		navigation.hidden = false;
+	};
+
+	const syncMobileMenuState = (matchesMobile) => {
+		if (!header || !menuToggle || !navigation) {
+			return;
+		}
+
+		if (matchesMobile) {
+			closeMobileMenu();
+			return;
+		}
+
+		navigation.hidden = false;
+		header.classList.remove("header--menu-open");
+		menuToggle.setAttribute("aria-expanded", "false");
+		menuToggle.setAttribute("aria-label", "Ouvrir le menu principal");
+	};
+
+	if (menuToggle && navigation) {
+		syncMobileMenuState(mobileMenuQuery.matches);
+
+		menuToggle.addEventListener("click", () => {
+			if (!mobileMenuQuery.matches) {
+				return;
+			}
+
+			if (header.classList.contains("header--menu-open")) {
+				closeMobileMenu();
+				return;
+			}
+
+			openMobileMenu();
+		});
+
+		navigation.querySelectorAll("a").forEach((link) => {
+			link.addEventListener("click", () => {
+				if (mobileMenuQuery.matches) {
+					closeMobileMenu();
+				}
+			});
+		});
+
+		mobileMenuQuery.addEventListener("change", (event) => {
+			syncMobileMenuState(event.matches);
+		});
+	}
 
 	// Déplace légèrement du background en fonction de la position de la souris
 	if (!prefersReducedMotion) {

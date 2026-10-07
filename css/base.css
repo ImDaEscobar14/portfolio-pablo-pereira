@@ -111,6 +111,75 @@ header {
     background: var(--bg-header);
 }
 
+.header__toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.header__toggle:hover,
+.header__toggle:focus-visible {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.35);
+    transform: translateY(-1px);
+}
+
+.header__toggle:focus-visible {
+    outline: 2px solid var(--text-accent);
+    outline-offset: 3px;
+}
+
+.header__toggle-icon {
+    position: relative;
+    width: 1.25rem;
+    height: 0.1rem;
+    border-radius: 999px;
+    background: currentColor;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.header__toggle-icon::before,
+.header__toggle-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background: currentColor;
+    transition: transform 0.2s ease, top 0.2s ease;
+}
+
+.header__toggle-icon::before {
+    top: -0.38rem;
+}
+
+.header__toggle-icon::after {
+    top: 0.38rem;
+}
+
+.header--menu-open .header__toggle-icon {
+    background: transparent;
+}
+
+.header--menu-open .header__toggle-icon::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.header--menu-open .header__toggle-icon::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
 @media (min-width: 761px) {
     header {
         padding-left: 1.5rem;
@@ -610,12 +679,31 @@ nav a {
     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02);
     --card-rotate-x: 0deg;
     --card-rotate-y: 0deg;
+    --card-scroll-offset: 24px;
+    --card-scroll-opacity: 0;
+    --card-scroll-delay: 0ms;
+    --card-scroll-exit-delay: 0ms;
     --media-border-color: var(--border-green);
     --media-glow-color: rgba(75, 127, 75, 0.62);
-    transform: perspective(900px) rotateX(var(--card-rotate-x)) rotateY(var(--card-rotate-y));
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    opacity: var(--card-scroll-opacity);
+    transform: perspective(900px) translateY(var(--card-scroll-offset)) rotateX(var(--card-rotate-x)) rotateY(var(--card-rotate-y));
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, opacity 0.45s ease;
     transform-origin: center;
-    will-change: transform;
+    will-change: transform, opacity;
+}
+
+.project-card--revealed {
+    --card-scroll-offset: 0px;
+    --card-scroll-opacity: 1;
+    animation: project-card-reveal 0.45s ease both;
+    animation-delay: var(--card-scroll-delay);
+}
+
+.project-card--leaving {
+    --card-scroll-offset: 0px;
+    --card-scroll-opacity: 1;
+    animation: project-card-disappear 0.45s ease both;
+    animation-delay: var(--card-scroll-exit-delay);
 }
 
 .project-card__button {
@@ -631,11 +719,35 @@ nav a {
 }
 
 .project-card:hover {
-    transform: perspective(900px) rotateX(var(--card-rotate-x)) rotateY(var(--card-rotate-y)) scale(1.015);
+    transform: perspective(900px) translateY(var(--card-scroll-offset)) rotateX(var(--card-rotate-x)) rotateY(var(--card-rotate-y)) scale(1.015);
     border-color: var(--media-border-color);
     box-shadow:
         0 0 24px var(--media-glow-color),
         0 0 54px color-mix(in srgb, var(--media-glow-color) 35%, transparent);
+}
+
+@keyframes project-card-reveal {
+    from {
+        opacity: 0;
+        transform: perspective(900px) translateY(24px) rotateX(var(--card-rotate-x)) rotateY(var(--card-rotate-y));
+    }
+
+    to {
+        opacity: 1;
+        transform: perspective(900px) translateY(0) rotateX(var(--card-rotate-x)) rotateY(var(--card-rotate-y));
+    }
+}
+
+@keyframes project-card-disappear {
+    from {
+        opacity: 1;
+        transform: perspective(900px) translateY(0) rotateX(var(--card-rotate-x)) rotateY(var(--card-rotate-y));
+    }
+
+    to {
+        opacity: 0;
+        transform: perspective(900px) translateY(24px) rotateX(var(--card-rotate-x)) rotateY(var(--card-rotate-y));
+    }
 }
 
 .project-card__button:focus-visible {
@@ -733,6 +845,21 @@ nav a {
         0 0 28px var(--media-glow-color),
         0 0 60px color-mix(in srgb, var(--media-glow-color) 45%, transparent),
         0 0 110px color-mix(in srgb, var(--media-glow-color) 22%, transparent);
+}
+
+html:not(.js-enabled) .project-card {
+    opacity: 1;
+    --card-scroll-offset: 0px;
+    --card-scroll-opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .project-card {
+        opacity: 1;
+        --card-scroll-offset: 0px;
+        --card-scroll-opacity: 1;
+        transition: box-shadow 0.25s ease, border-color 0.25s ease;
+    }
 }
 
 /* Description des cartes */
@@ -1084,14 +1211,37 @@ body.project-modal-open::-webkit-scrollbar {
     }
 
     header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.75rem;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 0.75rem 1rem;
+    }
+
+    .header__toggle {
+        display: inline-flex;
+    }
+
+    header nav {
+        grid-column: 1 / -1;
+        width: 100%;
+        display: none;
+    }
+
+    header.header--menu-open nav {
+        display: block;
     }
 
     nav > ul {
+        flex-direction: column;
+        align-items: flex-start;
         flex-wrap: wrap;
-        gap: 0.75rem 1rem;
+        gap: 0.6rem;
+    }
+
+    nav a {
+        display: inline-block;
+        padding: 0.2rem 0;
+        font-size: 1rem;
     }
 
     .competences-carousel__viewport {
