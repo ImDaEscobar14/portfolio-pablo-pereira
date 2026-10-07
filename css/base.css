@@ -101,8 +101,9 @@ body::after {
 
 /* ================= HEADER ET FOOTER ================= */
 header {
-    position: relative;
-    z-index: 1;
+    position: sticky;
+    top: 0;
+    z-index: 10;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -824,12 +825,14 @@ body.project-modal-open::-webkit-scrollbar {
 .project-modal__close {
     position: sticky;
     top: 0;
+    z-index: 2;
+    align-self: start;
     justify-self: end;
     width: 2.5rem;
     height: 2.5rem;
     appearance: none;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    background: rgba(0, 0, 0, 0.42);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.88);
     color: var(--text-primary);
     font: inherit;
     font-size: 1.6rem;

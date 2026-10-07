@@ -51,6 +51,15 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	}
 
+	const homeLink = document.querySelector('a[href="#top"]');
+
+	if (homeLink) {
+		homeLink.addEventListener("click", (event) => {
+			event.preventDefault();
+			window.scrollTo({ top: 0, behavior: "smooth" });
+		});
+	}
+
 	// Récupère les éléments nécessaires au fonctionnement de la carrousel
 	const carousel = document.querySelector(".competences-carousel");
 
