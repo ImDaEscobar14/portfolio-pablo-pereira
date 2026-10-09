@@ -25,11 +25,21 @@
 - Je n'avais pas accès à figma donc j'ai du utiliser et apprendre à utiliser Stich pour la conception de mes designs. 
 - J'ai appris comment exporter ce que j'ai créer sur Stitch et comment l'importer sur Figma.
 - Ma prochaine étape est de commencer le code HTML.
-- J'ai utilisé l'ai avec stich pour me faire quelques exemples de designs pour mon portfolio. 
+- J'ai utilisé l'IA avec stich pour me faire quelques exemples de designs pour mon portfolio. 
 
 
 
 ## Bloc 2 (Intégration et QA)
+
+
+- J'ai développer mon portfolio en Beta et j'ai réussi a faire un portfolio similaire que j'avais dans mes exemples sur figma. 
+- Ma difficulté majeur était d'intégrer mon Airtable sur mon portfolio. 
+- J'ai appris Airtable et comment au long terme c'est une manière plus simple à insérer des nouveaux projets au long terme à comparer au json.
+- Ma prochaine étape est de peaufiner mon portfolio ( ajout de mes animations dans la page, ajustement des problèmes vu dans mon QA).
+- J'ai utilisé l'IA avec copilote pour m'aider à structurer mon AirTable et avec quelques animations sur ma page. 
+
+
+
 ## Bloc 3 (Final)
 
 ## Utilisation de l'IA
@@ -83,3 +93,11 @@ J'aimerais que mes cartes quand j'appuie fassent apparaitre un pop up avec un bo
 j'aimerais que ma barre de scroll aient un esthetic similaire a le reste de ma page.
 
 Mon résultats au début était correct, j'ai du travailler sur les cartes pour les faire parraitre plus belle a mon gout, j'ai par la suite ajouté mes vidéos et descriptions de projets grâçe à mon airtable 
+
+---
+
+### 10-07-26 
+
+PROMPT : Pourrais tu me faire une animation de scroll down qui fait en sorte que quand je scroll down mes pages de projets apparraissent graduellement et fait en sorte qu'ils apparaissent un après les autres ( gauche en premier droite par la suite.)
+
+Mon résultats était vraiment bien selon moi, j'ai aimé ce que ca ma amené mais par la suite il y avait un problème avec mon hover de mes projets, il y avait un genre de delai qui a été ajouté. 

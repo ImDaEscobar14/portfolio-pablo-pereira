@@ -116,7 +116,7 @@ Enfin, nous avons beaucoup réfléchi aux scènes et aux plans que nous voulions
 
 ## Gestion des données
  
-Je vais utilisé un Fichier JSON local
+Je vais utilisé un Airtable
  
 ## Animations
  
