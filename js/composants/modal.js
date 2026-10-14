@@ -210,7 +210,7 @@ function openProjectModal(projectIndex) {
 	}
 }
 
-// Ajout d'un gestionnaire d'événement pour ouvrir le modal
+// Ajout d'un gestionnaire d'événement pour ouvrir la modal
 document.addEventListener("click", (event) => {
 	const clickedMedia = event.target.closest(".project-card__media");
 

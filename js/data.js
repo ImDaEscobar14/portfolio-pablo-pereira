@@ -121,12 +121,19 @@ function createProjectCard(project, index) {
 
     // Récupération des données du projet
     const fields = project.fields || project;
+    // Récupération de l'ID du projet pour déterminer la couleur de la carte
     const projectId = Number(fields.id || project.id || index + 1);
+    // Détermine la couleur de la carte en fonction de l'ID du projet
     const cardColor = projectId === 2 || projectId === 3 ? "red" : "green";
+    // Création de la carte du projet avec le titre, les technologies et l'image
     const card = createElement("article", `project-card project-card--${cardColor}`);
+    // Création du bouton pour ouvrir le modal du projet
     const button = createElement("button", "project-card__button");
+    // Récupération du titre, des technologies et de l'image du projet
     const title = getProjectTitle(fields);
+    // Récupération de la liste des technologies du projet
     const technologyList = getProjectTechnologies(fields);
+    // Récupération de l'URL de l'image du projet
     const imageUrl = getProjectImage(fields);
 
     card.dataset.projectId = projectId;
