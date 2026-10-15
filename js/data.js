@@ -10,6 +10,7 @@ let projectItems = [];
 async function fetchData() 
 {
     const response = await fetch(`https://api.airtable.com/v0/${base_id}/${table_id}`, {
+        cache: "no-store",
         headers: {
             'Authorization': `Bearer ${token}`
         }
@@ -66,6 +67,52 @@ function getProjectDescription(project) {
 // function qui sert à récupérer la description détaillée que j'ai mis dans Airtable
 function getProjectExtraDescription(project) {
     return project.detail || project.longDescription || project.details || project.subtitle || project.summary || "";
+}
+
+// function qui sert à récupérer le processus de création que j'ai mis dans Airtable
+function getProjectProcess(project) {
+    // Vérifie que le processus est récupéré seulement pour le projet Antrum
+    const projectTitle = getProjectTitle(project).trim().toUpperCase();
+
+    if (projectTitle !== "ANTRUM") {
+        return "";
+    }
+
+    // Récupère le contenu du champ Processus dans Airtable
+    return project.Processus || "";
+}
+
+// function qui sert à récupérer les images du processus de création que j'ai mis dans Airtable
+function getProjectProcessImages(project) {
+    // Vérifie que les images sont récupérées seulement pour le projet Antrum
+    const projectTitle = getProjectTitle(project).trim().toUpperCase();
+
+    if (projectTitle !== "ANTRUM") {
+        return [];
+    }
+
+    // Récupère les images du champ image_processus dans Airtable
+    const processImageField = Object.entries(project)
+        .find(([fieldName]) => fieldName.trim().toLowerCase().replace(/[\s-]+/g, "_") === "image_processus");
+    const images = processImageField?.[1] || [];
+    // Transforme une image seule en tableau pour pouvoir traiter plusieurs images
+    const imageList = Array.isArray(images) ? images : [images];
+
+    // Garde seulement les images qui possèdent une URL
+    return imageList
+        .map((image) => {
+            if (typeof image === "string") {
+                return { url: image };
+            }
+
+            if (image?.url) {
+                return image;
+            }
+
+            const thumbnailUrl = image?.thumbnails?.large?.url || image?.thumbnails?.full?.url;
+            return thumbnailUrl ? { ...image, url: thumbnailUrl } : image;
+        })
+        .filter((image) => image?.url);
 }
 
 // function qui sert à récupérer la vidéo que j'ai mis dans Airtable

@@ -1026,6 +1026,11 @@ body.project-modal-open::-webkit-scrollbar {
     background: rgba(0, 0, 0, 0.14);
 }
 
+/* Style visuel de la section processus de création d'Antrum */
+.project-modal__section--process {
+    background: rgba(125, 227, 178, 0.05);
+}
+
 .project-modal__video iframe,
 .project-modal__video video {
     display: block;
@@ -1118,6 +1123,38 @@ body.project-modal-open::-webkit-scrollbar {
     letter-spacing: 0.01em;
     background: rgba(0, 0, 0, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.project-modal__process-content {
+    display: grid;
+    gap: 0.8rem;
+}
+
+/* Organise les images du processus dans une grille responsive */
+.project-modal__process-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: 0.8rem;
+}
+
+/* Style les images ajoutées dans le processus de création */
+.project-modal__process-images img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border: 1px solid rgba(125, 227, 178, 0.2);
+}
+
+.project-modal__process-text {
+    margin: 0;
+    padding: 0.7rem 0.85rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: clamp(0.98rem, 1.05vw, 1.06rem);
+    line-height: 1.75;
+    letter-spacing: 0.01em;
+    background: rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(125, 227, 178, 0.2);
 }
 
 .project-modal__footer {

@@ -139,3 +139,7 @@ Je choisi de le publier sur github car je trouve que c'est plus simple pour moi 
 ## Inspiration et design
 
 https://www.figma.com/design/GE7NpAoOo3rGNe7ty4Fe6s/design_portfolio_pereira_pablo?node-id=36-44&t=j28qrd8w9CCanWyI-0
+
+## Section QA
+
+https://cmontmorency365-my.sharepoint.com/:x:/r/personal/mariem_ouellet_cmontmorency_qc_ca/_layouts/15/Doc.aspx?sourcedoc=%7B948C9496-3D4D-457E-9104-B7E46F3E225A%7D&file=qa_pablo_pereira.xlsx&action=default&mobileredirect=true

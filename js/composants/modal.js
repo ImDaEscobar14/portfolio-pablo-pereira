@@ -20,6 +20,10 @@ function createProjectModal() {
 	const descriptionSection = createElement("section", "project-modal__section project-modal__section--details");
 	const descriptionTitle = createElement("h4", "project-modal__section-title", "Description détaillée");
 	const extraDescription = createElement("div", "project-modal__extra-description");
+	// Création de la section du processus de création du projet Antrum
+	const processSection = createElement("section", "project-modal__section project-modal__section--process");
+	const processTitle = createElement("h4", "project-modal__section-title", "Processus de création");
+	const processContent = createElement("div", "project-modal__process-content");
 	const meta = createElement("div", "project-modal__meta");
 	const metaLabel = createElement("p", "project-modal__meta-label", "Technologies");
 	const tags = createElement("div", "project-modal__tags");
@@ -45,6 +49,9 @@ function createProjectModal() {
 	videoSection.appendChild(video);
 	descriptionSection.appendChild(descriptionTitle);
 	descriptionSection.appendChild(extraDescription);
+	// Ajout du titre et du contenu dans la section processus
+	processSection.appendChild(processTitle);
+	processSection.appendChild(processContent);
 	content.appendChild(meta);
 	content.appendChild(videoSection);
 	content.appendChild(descriptionSection);
@@ -60,11 +67,15 @@ function createProjectModal() {
 
 	projectModalElements = {
 		panel,
+		content,
 		image,
 		video,
 		title,
 		description,
 		extraDescription,
+		// Garde les éléments de la section processus pour les afficher seulement pour Antrum
+		processContent,
+		processSection,
 		videoSection,
 		descriptionSection,
 		tags,
@@ -114,6 +125,8 @@ function renderProjectModal(projectIndex) {
 	const title = getProjectTitle(fields);
 	const description = getProjectDescription(fields);
 	const extraDescription = getProjectExtraDescription(fields);
+	// Récupération du processus de création, qui est prévu seulement pour Antrum
+	const process = getProjectProcess(fields);
 	const imageUrl = getProjectImage(fields);
 	const videoUrl = getProjectVideoUrl(fields);
 	const technologyList = getProjectTechnologies(fields);
@@ -121,6 +134,8 @@ function renderProjectModal(projectIndex) {
 	projectModalElements.title.textContent = title;
 	projectModalElements.description.textContent = description;
 	projectModalElements.extraDescription.replaceChildren();
+	// Vide l'ancien processus avant d'afficher le projet sélectionné
+	projectModalElements.processContent.replaceChildren();
 	projectModalElements.image.src = imageUrl;
 	projectModalElements.image.alt = fields.imageAlt || `Image du projet ${title}`;
 	projectModalElements.counter.textContent = `${currentProjectIndex + 1} / ${projectItems.length}`;
@@ -136,6 +151,95 @@ function renderProjectModal(projectIndex) {
 		paragraphs.forEach((paragraph) => {
 			projectModalElements.extraDescription.appendChild(createElement("p", "project-modal__extra-text", paragraph));
 		});
+	}
+
+	// Vérifie que le projet affiché est Antrum avant d'ajouter son processus de création
+	const isAntrum = title.trim().toUpperCase() === "ANTRUM";
+	// Récupère les images du processus pour le projet Antrum
+	const processImages = getProjectProcessImages(fields);
+	if (isAntrum && process) {
+		// Sépare le contenu du champ Processus en plusieurs paragraphes
+		const paragraphs = String(process)
+			.split(/\n+/)
+			.map((text) => text.trim())
+			.filter(Boolean);
+
+		// function qui sert à ajouter les images du processus dans le popup
+		const appendProcessImages = (images) => {
+			// Création d'un groupe pour afficher les images ensemble
+			const imageGroup = createElement("div", "project-modal__process-images");
+
+			images.forEach((attachment, index) => {
+				// Crée une image avec la miniature Airtable ou son URL originale
+				const image = document.createElement("img");
+				image.src = attachment.thumbnails?.large?.url || attachment.url;
+				// Ajoute un texte alternatif pour rendre les images accessibles
+				image.alt = attachment.filename || `Image du processus de création ${index + 1} d'Antrum`;
+				image.loading = "lazy";
+				image.addEventListener("error", () => {
+					console.error("Impossible de charger une image du processus d'Antrum.", attachment);
+				});
+				// Ajoute l'image dans le groupe d'images
+				imageGroup.appendChild(image);
+			});
+
+			// Ajoute le groupe d'images dans le contenu du processus
+			projectModalElements.processContent.appendChild(imageGroup);
+		};
+
+		// Affiche les paragraphes du processus dans le popup
+		paragraphs.forEach((paragraph, paragraphIndex) => {
+			projectModalElements.processContent.appendChild(createElement("p", "project-modal__process-text", paragraph));
+
+			// Ajoute les trois premières images après le troisième paragraphe
+			if (paragraphIndex === 2) {
+				appendProcessImages(processImages.slice(0, 3));
+			}
+
+			// Ajoute les images restantes après le dernier paragraphe
+			if (paragraphIndex === paragraphs.length - 1 && paragraphs.length > 3) {
+				appendProcessImages(processImages.slice(3));
+			}
+
+			// Ajoute toutes les images après le dernier paragraphe si le texte est plus court
+			if (paragraphIndex === paragraphs.length - 1 && paragraphs.length < 3) {
+				appendProcessImages(processImages);
+			}
+		});
+
+		if (paragraphs.length === 0) {
+			// Ajoute toutes les images si le processus ne contient aucun paragraphe
+			appendProcessImages(processImages);
+		}
+	} else if (isAntrum && processImages.length) {
+		// Ajoute les images même si aucun texte de processus n'est renseigné
+		const appendProcessImages = (images) => {
+			// Création d'un groupe pour afficher les images ensemble
+			const imageGroup = createElement("div", "project-modal__process-images");
+
+			images.forEach((attachment, index) => {
+				// Création de l'image à partir de l'URL fournie par Airtable
+				const image = document.createElement("img");
+				image.src = attachment.thumbnails?.large?.url || attachment.url;
+				image.alt = attachment.filename || `Image du processus de création ${index + 1} d'Antrum`;
+				image.loading = "lazy";
+				// Ajoute l'image dans le groupe d'images
+				imageGroup.appendChild(image);
+			});
+
+			// Ajoute le groupe d'images dans le contenu du processus
+			projectModalElements.processContent.appendChild(imageGroup);
+		};
+
+		appendProcessImages(processImages);
+	}
+
+	if (isAntrum && (process || processImages.length)) {
+		// Ajoute la section au popup uniquement pour le projet Antrum
+		projectModalElements.content.appendChild(projectModalElements.processSection);
+	} else if (projectModalElements.processSection.parentElement) {
+		// Retire complètement la section du popup pour les autres projets
+		projectModalElements.processSection.remove();
 	}
 
 	projectModalElements.video.replaceChildren();
