@@ -48,6 +48,8 @@
 - Avec une semaine de plus j'aurais paufiner mon background pour que l'animation d'un neon qui fait un genre de pulse.
 - J'ai utilisé l'IA avec copilote pour m'aider à structurer mon AirTable et avec quelques animations sur ma section de projet lors du scroll down. 
 
+
+
 ## Utilisation de l'IA
 
 ### 09-02-26

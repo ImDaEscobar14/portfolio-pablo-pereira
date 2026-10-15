@@ -1162,6 +1162,7 @@ body.project-modal-open::-webkit-scrollbar {
     grid-template-columns: auto 1fr auto;
     gap: 0.9rem;
     align-items: center;
+    padding: 0.25rem 0.15rem 0.5rem;
 }
 
 .project-modal__nav-button {
