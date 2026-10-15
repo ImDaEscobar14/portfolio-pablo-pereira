@@ -25,7 +25,7 @@ body {
     background-color: var(--bg-dark);
     background-image: url("../assets/images/background_v2.png");
     background-position: calc(50% + var(--background-x, 0px)) calc(0% + var(--background-y, 0px));
-    background-size: 115% auto;
+    background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
     transition: background-position 0.18s ease-out;
@@ -914,6 +914,8 @@ body.project-modal-open::-webkit-scrollbar {
 }
 
 /* ================= POP UP ================= */
+
+
 .project-modal {
     width: min(97vw, 88rem);
     padding: 0;
@@ -931,11 +933,13 @@ body.project-modal-open::-webkit-scrollbar {
     height: 0;
 }
 
+/*background de popup*/
 .project-modal::backdrop {
     background: rgba(0, 0, 0, 0.82);
     backdrop-filter: blur(8px);
 }
 
+/*le popup en soit*/
 .project-modal__panel {
     position: relative;
     display: grid;
@@ -949,6 +953,7 @@ body.project-modal-open::-webkit-scrollbar {
     scrollbar-gutter: stable;
 }
 
+/*bouton pour fermer*/
 .project-modal__close {
     position: sticky;
     top: 0;
@@ -984,6 +989,7 @@ body.project-modal-open::-webkit-scrollbar {
     margin: 0;
 }
 
+/*image top de mon popup*/
 .project-modal__media img {
     display: block;
     width: 100%;
@@ -993,6 +999,7 @@ body.project-modal-open::-webkit-scrollbar {
     border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+/*contenu de mon popup*/
 .project-modal__content {
     display: grid;
     gap: 1rem;
@@ -1001,6 +1008,7 @@ body.project-modal-open::-webkit-scrollbar {
     padding: 0.2rem;
 }
 
+/*mes sections (airtable)*/
 .project-modal__section {
     display: grid;
     gap: 0.9rem;
@@ -1162,7 +1170,7 @@ body.project-modal-open::-webkit-scrollbar {
     grid-template-columns: auto 1fr auto;
     gap: 0.9rem;
     align-items: center;
-    padding: 0.25rem 0.15rem 0.5rem;
+    padding: 0.25rem 0.15rem 1.35rem;
 }
 
 .project-modal__nav-button {
@@ -1173,7 +1181,7 @@ body.project-modal-open::-webkit-scrollbar {
     font: inherit;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    padding: 0.7rem 0.95rem;
+    padding: 0.7rem 1.35rem;
     cursor: pointer;
     transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
@@ -1194,8 +1202,22 @@ body.project-modal-open::-webkit-scrollbar {
 
 /* ================= RESPONSIVE MOBILE ================= */
 @media (max-width: 760px) {
+    header,
+    .page-content {
+        width: 100%;
+        margin-inline: auto;
+    }
+
+    header {
+        padding-inline: 1rem;
+    }
+
+    .page-content {
+        padding-inline: 1rem;
+    }
+
     body {
-        background-size: auto 130%;
+        background-size: cover;
     }
 
     .intro-portfolio {
@@ -1348,11 +1370,12 @@ body.project-modal-open::-webkit-scrollbar {
     }
 
     .project-modal__footer {
-        grid-template-columns: 1fr;
-        justify-items: stretch;
+        grid-template-columns: auto 1fr auto;
+        justify-items: center;
+        padding-bottom: 1.35rem;
     }
 
     .project-modal__counter {
-        justify-self: start;
+        justify-self: center;
     }
 }

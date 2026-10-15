@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	// Vérifie les préférences d'animation avant d'activer les effets visuels
 	const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+	// Prépare les variables utilisées pour l'effet de parallaxe du background
 	let backgroundFrame = null;
 	const header = document.querySelector("header");
 	const menuToggle = document.querySelector(".header__toggle");
@@ -50,7 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
 			return;
 		}
 
+		// Calcule quand révéler ou cacher les cartes de projets en fonction de la position de la fenêtre
 		const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+		// Les cartes apparaissent lorsqu'elles sont à 82% de la hauteur de la fenêtre et disparaissent lorsqu'elles sont à 38%
 		const revealThreshold = viewportHeight * 0.82;
 		const hideThreshold = viewportHeight * 0.38;
 
@@ -58,9 +61,11 @@ document.addEventListener("DOMContentLoaded", () => {
 			if (!(card instanceof HTMLElement)) {
 				return;
 			}
-
+			// Récupère la position de la carte par rapport à la fenêtre et détermine si elle est visible ou non
 			const rect = card.getBoundingClientRect();
+			// Si on fait défiler vers le bas, on révèle la carte lorsqu'elle est à 82% de la hauteur de la fenêtre
 			const isVisible = scrollDirection >= 0
+				// le ? sert à dire "si on fait défiler vers le bas, alors on utilise le revealThreshold, sinon on utilise le hideThreshold"
 				? rect.top <= revealThreshold && rect.bottom > 0
 				: rect.top <= hideThreshold && rect.bottom > 0;
 
@@ -68,11 +73,11 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	};
 
+	// Planifie la mise à jour de l'état des cartes de projets pour le prochain frame
 	const scheduleProjectCardScrollStateUpdate = () => {
 		if (projectScrollFrame !== null) {
 			return;
 		}
-
 		projectScrollFrame = window.requestAnimationFrame(updateProjectCardScrollState);
 	};
 
@@ -127,6 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		mutationObserver.observe(document.body, { childList: true, subtree: true });
 
+		// Met à jour l'etat des cartes de projets lorsqu'on fait défiler la page ou reduit la fenêtre
 		window.addEventListener("scroll", () => {
 			const currentScrollY = window.scrollY;
 			scrollDirection = currentScrollY >= lastScrollY ? 1 : -1;
@@ -214,7 +220,9 @@ document.addEventListener("DOMContentLoaded", () => {
 				return;
 			}
 
+			// Planifie la mise à jour de la position du background pour le prochain frame
 			backgroundFrame = window.requestAnimationFrame(() => {
+				// Calcule la position de la souris par rapport à la fenêtre et applique un décalage au background, le -0.5 sert à centrer le mouvement et le -12 et -8 font en sorte que le mouvement soit plus subtil
 				const horizontalOffset = ((event.clientX / window.innerWidth) - 0.5) * -12;
 				const verticalOffset = ((event.clientY / window.innerHeight) - 0.5) * -8;
 
@@ -234,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				return;
 			}
 
-			// Calcule la position de la souris par rapport à la carte et applique une rotation en conséquence
+			// Calcule la position de la souris par rapport à la carte et applique une rotation en conséquence (0 a gauche , 0.5 au centre, 1 a droite pour horizontal et 0 en haut, 0.5 au centre, 1 en bas pour vertical)
 			const cardBounds = card.getBoundingClientRect();
 			const horizontalPosition = (event.clientX - cardBounds.left) / cardBounds.width - 0.5;
 			const verticalPosition = (event.clientY - cardBounds.top) / cardBounds.height - 0.5;
@@ -375,6 +383,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const restartAutoplay = () => {
 		window.clearInterval(autoplayTimer);
 		autoplayTimer = window.setInterval(() => {
+	// Déplace la carrousel d'une carte vers la droite toutes les 3,5 secondes
 			moveCarousel(1);
 		}, 3500);
 	};

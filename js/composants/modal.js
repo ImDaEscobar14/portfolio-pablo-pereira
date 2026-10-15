@@ -65,6 +65,7 @@ function createProjectModal() {
 	panel.appendChild(footer);
 	dialog.appendChild(panel);
 
+	// Stocke les éléments du popup dans un objet pour les réutiliser facilement
 	projectModalElements = {
 		panel,
 		content,
@@ -88,7 +89,7 @@ function createProjectModal() {
 	closeButton.addEventListener("click", () => {
 		dialog.close();
 	});
-
+	// Gestion des boutons de navigation pour passer au projet précédent ou suivant
 	prevButton.addEventListener("click", () => {
 		openProjectModal(currentProjectIndex - 1);
 	});
