@@ -15,6 +15,7 @@ html {
     --text-primary: #f3efe8;
     --text-accent: #E20A0D;
     --border-green: #4B7F4B;
+    --project-tech-green: #7de3b2;
     --body-text: #e6e0d7;
 }
 
@@ -459,7 +460,7 @@ nav a {
 
 .competence-card__label {
     margin: 0;
-    color: var(--border-green);
+    color: var(--project-tech-green);
     font-size: clamp(0.85rem, 0.95vw, 1.05rem);
     font-weight: 400;
     letter-spacing: 0.06em;
@@ -785,7 +786,7 @@ nav a {
 
 .project-card__tag {
     padding: 0.3rem 0.5rem;
-    color: #7de3b2;
+    color: var(--project-tech-green);
     font-size: 0.7rem;
     line-height: 1;
     letter-spacing: 0.04em;
