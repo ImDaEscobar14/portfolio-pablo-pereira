@@ -42,6 +42,12 @@
 
 ## Bloc 3 (Final)
 
+- J'ai arranger les problèmes majeurs que j'avais dans mon QA et aussi ajuster la taille de mes photots dans mon Airtable pour qu'ils soient moins lourd. 
+- Ma difficulté majeur était d'intégrer ma section de processus de création et des images à l'intérieur dans mon Airtable. 
+- J'ai appris plus sur comment ajuster ma structure grâçe à Airtable.
+- Avec une semaine de plus j'aurais paufiner mon background pour que l'animation d'un neon qui fait un genre de pulse.
+- J'ai utilisé l'IA avec copilote pour m'aider à structurer mon AirTable et avec quelques animations sur ma section de projet lors du scroll down. 
+
 ## Utilisation de l'IA
 
 ### 09-02-26
@@ -100,4 +106,14 @@ Mon résultats au début était correct, j'ai du travailler sur les cartes pour 
 
 PROMPT : Pourrais tu me faire une animation de scroll down qui fait en sorte que quand je scroll down mes pages de projets apparraissent graduellement et fait en sorte qu'ils apparaissent un après les autres ( gauche en premier droite par la suite.)
 
+PROMPT : Ajoute moi un menu hamburger dans mon mode mobile.
+
 Mon résultats était vraiment bien selon moi, j'ai aimé ce que ca ma amené mais par la suite il y avait un problème avec mon hover de mes projets, il y avait un genre de delai qui a été ajouté. 
+
+---
+
+### 10-14-26
+
+PROMPT : J'ai ajoute dans mon airtable une section pour mon processus de creation et aussi j'ai ajouter une nouvelle section de photo, pourrais-tu faire en sorte que les photos 1-2-3 apparraissent apres mon 3e paragraphe et le reste en bas
+
+Mon résultat était vraiment satisfaisant, j'ai du jouer un peu avec l'IA pour voir des versions de comment il allait afficher les images mais le résultat final était vraiment a mon gout.
